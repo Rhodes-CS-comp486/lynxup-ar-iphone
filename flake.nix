@@ -1,5 +1,5 @@
 {
-  description = "Python Dev Environment with venv";
+  description = "Python Dev Environment with Flask";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -18,6 +18,7 @@
           pkgs.python3
           pkgs.python3Packages.pip
           pkgs.python3Packages.virtualenv
+
         ];
 
         nativeBuildInputs = [
@@ -28,7 +29,7 @@
 
         # Write custom config.fish to a temporary file and set XDG_CONFIG_HOME to point to it
         shellHook = ''
-           export PS1="($name) $PS1"
+           export PS1="\n($name) $PS1"
         '';
       };
     });
