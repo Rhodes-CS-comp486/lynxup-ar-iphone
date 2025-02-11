@@ -14,17 +14,19 @@
       devShell = pkgs.mkShell {
         name = "python-dev";
 
-        buildInputs = [
-          pkgs.python3
-          pkgs.python3Packages.pip
-          pkgs.python3Packages.virtualenv
-          pkgs.python3Packages.flask
+        buildInputs = with pkgs; [
+          python3
+          python3Packages.pip
+          python3Packages.virtualenv
+          python3Packages.flask
+          python3Packages.firebase-admin
+          firebase-tools
         ];
 
-        nativeBuildInputs = [
-          pkgs.git
-          pkgs.direnv
-          pkgs.jq
+        nativeBuildInputs = with pkgs; [
+          git
+          direnv
+          jq
         ];
 
         # Write custom config.fish to a temporary file and set XDG_CONFIG_HOME to point to it
