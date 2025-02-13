@@ -45,6 +45,7 @@ def get_user(username):
 def login():
     data = request.get_json()
 
+    # for now, let's just login with a username
     username = data.get("username")
     password = data.get("password")
 
@@ -57,13 +58,13 @@ def login():
     else:
         print("user does not exist")
     
-    dbpasswd = dbuser.get("password")
+    # dbpasswd = dbuser.get("password")
 
 
-    if (password == dbpasswd):
-        print("authentication successful")
-    else:
-        print("authentication failed")
+    # if (password == dbpasswd):
+    #     print("authentication successful")
+    # else:
+    #     print("authentication failed")
 
     # TODO: do something if the authentication was a success....
     return jsonify()
