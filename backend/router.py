@@ -46,11 +46,15 @@ def login():
     data = request.get_json()
 
     # for now, let's just login with a username
+    # Assume we have already authenticated with Google
+    # This will probably be the user's email
+    # or the dedicated username they created for the game
     username = data.get("username")
     # password = data.get("password")
 
     # TODO: need to check whether the user exists
-    dbuser = db_firestore.collection("users").document(f"{username}")
+    dbuser = db_firestore.collection("users")
+    query = dbuser.where("username", "==", f"{username}").stream()
     testdoc = dbuser.get()
 
     if testdoc.exists:
