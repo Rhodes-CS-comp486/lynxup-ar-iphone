@@ -26,12 +26,12 @@ def add_user():
 
     # maybe store this more securely
     # probably doesn't matter right now...
-    password = data.get("password")
+    # password = data.get("password")
 
     user = db_firestore.collection("users").document(f"{username}")
     user.set({"name": f"{name}",
-              "location": f"{location}",
-              "password": f"{password}"})
+              "location": f"{location}"})
+              
 
     return jsonify({"message" :f"Received name: {name}, location: {location}"}), 200
 
@@ -47,7 +47,7 @@ def login():
 
     # for now, let's just login with a username
     username = data.get("username")
-    password = data.get("password")
+    # password = data.get("password")
 
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users").document(f"{username}")
