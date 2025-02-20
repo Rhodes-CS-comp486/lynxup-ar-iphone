@@ -23,22 +23,30 @@ def add_user():
     username = data.get("username")
     name = data.get("name")
     location = data.get("location")
+    email = data.get("email")
 
+    user_ref = db_firestore.collection("users")
+    user = {
+            "username" : username,
+            "name" : name,
+            "location" : location,
+            "email" : email
+            }
     # maybe store this more securely
     # probably doesn't matter right now...
     # password = data.get("password")
 
-    user = db_firestore.collection("users").document(f"{username}")
-    user.set({"name": f"{name}",
-              "location": f"{location}"})
-              
+    entry_ref = user_ref.add(user)
+
+    generated_id = entry_ref[1].id
+    print(f"New entry added with ID: {generated_id}")
 
     return jsonify({"message" :f"Received name: {name}, location: {location}"}), 200
 
-@app.route("/get_user/<username>")
-def get_user(username):
-    user = db_firestore.collection("users").document(f"{username}").get()
-    return user.to_dict()
+# @app.route("/get_user/<username>")
+# def get_user(username):
+#     user = db_firestore.collection("users").document(f"{username}").get()
+#     return user.to_dict()
 
 
 @app.route("/login", methods=['POST'])
@@ -55,13 +63,12 @@ def login():
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
     query = dbuser.where("username", "==", f"{username}").stream()
-    testdoc = dbuser.get()
+    print(query)
+    user = {}
+    for doc in query:
+        print(f"ID : {doc.id}, Data: {doc.to_dict()}")
+        user = doc.to_dict()
 
-    if testdoc.exists:
-        print("user exists")
-    else:
-        print("user does not exist")
-    
     # dbpasswd = dbuser.get("password")
 
 
@@ -71,5 +78,5 @@ def login():
     #     print("authentication failed")
 
     # TODO: do something if the authentication was a success....
-    return jsonify()
+    return jsonify(user)
 
