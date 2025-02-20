@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import firebase_admin
 from firebase import db_firestore
+from google.cloud.firestore_v1.base_query import FieldFilter
 
 app = Flask(__name__)
 
@@ -14,6 +15,7 @@ def hello_world():
 
 # TODO: make this more expansive; let's receive JSON from the frontend
 # this will give us more flexibility
+# TODO: need to verify that the username chosen has not already been taken
 @app.route("/add_user", methods=['POST'])
 def add_user():
     data = request.get_json()
@@ -25,15 +27,26 @@ def add_user():
     location = data.get("location")
     email = data.get("email")
 
+    # make sure the username that the user has chosen has not already been taken
     user_ref = db_firestore.collection("users")
+    print("do something interesting here")
+    test_query = user_ref.where(filter=FieldFilter("username", "==", f"{username}")).stream()
+    # print(test_query)
+    query_results = list(test_query)
+    # return an error if username already exists in database
+    if query_results:
+        return jsonify({"error": "Username already in use"}), 400   
+
     user = {
             "username" : username,
             "name" : name,
             "location" : location,
             "email" : email
             }
+
     # maybe store this more securely
     # probably doesn't matter right now...
+    # Update: we're authenticating with Google so we really don't need this
     # password = data.get("password")
 
     entry_ref = user_ref.add(user)
@@ -80,7 +93,7 @@ def login():
 
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
-    query = dbuser.where("email", "==", f"{email}").stream()
+    query = dbuser.where(filter=FieldFilter("email", "==", f"{email}")).stream()
     print(query)
     user = {}
     for doc in query:
