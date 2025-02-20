@@ -48,6 +48,23 @@ def add_user():
 #     user = db_firestore.collection("users").document(f"{username}").get()
 #     return user.to_dict()
 
+@app.route("/del_user", methods=['POST'])
+def del_user():
+    data = request.get_json()
+    username = data.get("username")
+
+    users_ref = db_firestore.collection("users")
+
+    query = users_ref.where("username", "==", f"{username}").stream()
+
+    old_value = {}
+    for doc in query:
+        old_value = doc.to_dict()
+        doc.reference.delete()
+        print(f"Deleted entry with ID: {doc.id}")
+
+    return jsonify(old_value)
+
 
 @app.route("/login", methods=['POST'])
 def login():
@@ -57,12 +74,13 @@ def login():
     # Assume we have already authenticated with Google
     # This will probably be the user's email
     # or the dedicated username they created for the game
-    username = data.get("username")
+    # username = data.get("username")
+    email = data.get("email")
     # password = data.get("password")
 
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
-    query = dbuser.where("username", "==", f"{username}").stream()
+    query = dbuser.where("email", "==", f"{email}").stream()
     print(query)
     user = {}
     for doc in query:
