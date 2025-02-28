@@ -19,13 +19,15 @@ def hello_world():
 @app.route("/add_user", methods=['POST'])
 def add_user():
     data = request.get_json()
+    print(data)
 
     # Extract fields; what fields?
     # I think a (non-personal) location of origin would actually be really cool; let's add that!
+    # Note: let's just get the username
     username = data.get("username")
-    name = data.get("name")
-    location = data.get("location")
-    email = data.get("email")
+    # name = data.get("name")
+    # location = data.get("location")
+    # email = data.get("email")
 
     # make sure the username that the user has chosen has not already been taken
     user_ref = db_firestore.collection("users")
@@ -39,9 +41,9 @@ def add_user():
 
     user = {
             "username" : username,
-            "name" : name,
-            "location" : location,
-            "email" : email
+            "items" : [],
+            "visited_locations" : []
+            # "email" : email
             }
 
     # maybe store this more securely
@@ -54,7 +56,7 @@ def add_user():
     generated_id = entry_ref[1].id
     print(f"New entry added with ID: {generated_id}")
 
-    return jsonify({"message" :f"Received name: {name}, location: {location}"}), 200
+    return jsonify({"message" :f"Received name: {username}"}), 200
 
 # @app.route("/get_user/<username>")
 # def get_user(username):
@@ -88,12 +90,12 @@ def login():
     # This will probably be the user's email
     # or the dedicated username they created for the game
     # username = data.get("username")
-    email = data.get("email")
+    username = data.get("username")
     # password = data.get("password")
 
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
-    query = dbuser.where(filter=FieldFilter("email", "==", f"{email}")).stream()
+    query = dbuser.where(filter=FieldFilter("username", "==", f"{username}")).stream()
     print(query)
     user = {}
     for doc in query:
