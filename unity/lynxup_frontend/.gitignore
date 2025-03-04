@@ -45,3 +45,8 @@ sysinfo.txt
 *.unitypackage
 
 .DS_Store
+
+
+# Added Assets
+Assets/ARMagicBar/
+Assets/ARMagicBar/*
