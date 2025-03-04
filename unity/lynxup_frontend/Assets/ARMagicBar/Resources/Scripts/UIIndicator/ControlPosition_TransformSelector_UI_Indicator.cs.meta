@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 09e99d656a79a415aa444833852e3c98
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Scripts/UIIndicator/ControlPosition_TransformSelector_UI_Indicator.cs
+  uploadId: 734052

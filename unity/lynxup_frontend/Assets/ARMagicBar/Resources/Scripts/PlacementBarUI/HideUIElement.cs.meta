@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f7504a8af3fe4559b1c9bea6af279182
+timeCreated: 1712170457
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Scripts/PlacementBarUI/HideUIElement.cs
+  uploadId: 734052

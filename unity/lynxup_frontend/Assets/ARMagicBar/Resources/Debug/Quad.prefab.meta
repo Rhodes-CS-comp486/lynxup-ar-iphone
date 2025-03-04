@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e04d19ee2fb674120b1387ec2beced90
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Debug/Quad.prefab
+  uploadId: 734052

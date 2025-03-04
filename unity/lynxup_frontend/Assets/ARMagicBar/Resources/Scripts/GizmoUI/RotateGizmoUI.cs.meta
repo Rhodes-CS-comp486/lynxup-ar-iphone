@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a0b3cdcb235043808462b312acd02256
+timeCreated: 1706642744
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Scripts/GizmoUI/RotateGizmoUI.cs
+  uploadId: 734052

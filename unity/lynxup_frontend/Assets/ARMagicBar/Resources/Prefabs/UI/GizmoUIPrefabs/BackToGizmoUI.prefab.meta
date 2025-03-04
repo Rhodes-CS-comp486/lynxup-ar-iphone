@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c446273d38a6c4192bbb2c0407ceefb8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/UI/GizmoUIPrefabs/BackToGizmoUI.prefab
+  uploadId: 734052

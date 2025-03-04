@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27c730ad010c64a27ba56642bd807d9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/UI/PlacementBarUI/PlacementObjectUIPref.prefab
+  uploadId: 734052

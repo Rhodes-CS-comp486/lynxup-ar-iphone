@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 18f7b1dc39aba45d89ed7b87a6c1932b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/Gizmo/GizmoPrefab/VisibilityShader/GizmoShader.shader
+  uploadId: 734052

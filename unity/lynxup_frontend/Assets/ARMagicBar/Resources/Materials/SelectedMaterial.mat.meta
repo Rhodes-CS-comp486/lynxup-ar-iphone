@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b444db0b68514dbc9565e538a1fc4d0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Materials/SelectedMaterial.mat
+  uploadId: 734052

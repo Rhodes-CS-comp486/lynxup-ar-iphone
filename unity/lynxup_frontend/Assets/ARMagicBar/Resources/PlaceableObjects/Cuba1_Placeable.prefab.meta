@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4b9084ee90d0b41aeb3106e1dfce1f16
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/PlaceableObjects/Cuba1_Placeable.prefab
+  uploadId: 734052

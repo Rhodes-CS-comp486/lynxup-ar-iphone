@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: faaf29db4e74c489889a8bec0943a492
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Scripts/UITransformBar/UITransformBarCanvasSortingOrder.cs
+  uploadId: 734052

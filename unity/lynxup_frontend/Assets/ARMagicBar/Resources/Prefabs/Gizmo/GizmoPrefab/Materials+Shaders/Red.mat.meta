@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4eee7d85768774c3a803d67ddedc5dac
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/Gizmo/GizmoPrefab/Materials+Shaders/Red.mat
+  uploadId: 734052

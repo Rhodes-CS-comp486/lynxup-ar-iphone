@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 86153b37fa779468c92f49cfe79db5e1
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/Gizmo/GizmoPrefab/Materials+Shaders/AlwaysOnTopShader.shader
+  uploadId: 734052

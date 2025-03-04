@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8e48ee73d872c47f594e765653512845
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/PlaceableObject/ScreenUI/PlaceableObjectTemplate_ScreenUI.prefab
+  uploadId: 734052

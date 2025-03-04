@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 96791597fb6cb453fadcfe6eb95e1902
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/PlaceableObjects/placeholder.txt
+  uploadId: 734052

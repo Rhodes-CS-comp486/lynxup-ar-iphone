@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fd0eb3bc700ac40dabc927b1bca524d2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/Gizmo/GizmoPrefab/RotateObject/FBX/RotateGizmo.prefab
+  uploadId: 734052

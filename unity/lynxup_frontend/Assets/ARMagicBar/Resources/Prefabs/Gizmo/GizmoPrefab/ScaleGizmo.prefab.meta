@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7b5cb6b93848e4f3d91e4d02b6f7ee65
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 295650
+  packageName: AR Magic Bar Lite (AR Foundation, Lightship & 3D)
+  packageVersion: 1.003
+  assetPath: Assets/ARMagicBar/Resources/Prefabs/Gizmo/GizmoPrefab/ScaleGizmo.prefab
+  uploadId: 734052
