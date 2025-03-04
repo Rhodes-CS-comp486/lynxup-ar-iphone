@@ -221,10 +221,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1245040714}
-    - targetCorrespondingSourceObject: {fileID: 2512387469002778309, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+    - targetCorrespondingSourceObject: {fileID: 2512387470528047719, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 1245040715}
   m_SourcePrefab: {fileID: 100100000, guid: 48cb3fb68c91eb94999fd99957eb0cae, type: 3}
 --- !u!1 &702413256
 GameObject:
@@ -447,6 +447,21 @@ MonoBehaviour:
   ArPrefabs:
   - {fileID: 3789694248052863167, guid: e7f16c8d7cac54efb8ffe58ed572af6f, type: 3}
   - {fileID: 205417253552444693, guid: 9ecfcb9ae37d54e73b2333adfefe31cb, type: 3}
+--- !u!114 &1245040715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245040708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd15ab5313bbb4c10832b4667d426e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageScenePairs:
+  - imageName: BriggsHall
+    sceneName: BriggsUI
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
