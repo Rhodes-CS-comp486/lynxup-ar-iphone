@@ -64,6 +64,7 @@ public class SignInVerify : MonoBehaviour
 
         yield return request.SendWebRequest();
 
+        Debug.Log("HTTP Response Code: " + request.responseCode);
         if (request.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("Response: " + request.downloadHandler.text);

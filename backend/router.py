@@ -100,7 +100,7 @@ def login():
     dbuser = db_firestore.collection("users")
     query = dbuser.where(filter=FieldFilter("username", "==", f"{username}")).stream()
     if not query:
-        return jsonify({"error": "Username already in use"}), 400   
+        return jsonify({"error": "Username does not exist"}), 400   
 
     print(query)
     user = {}
