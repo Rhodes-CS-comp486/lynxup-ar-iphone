@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public class SignInVerify : MonoBehaviour
 {
@@ -66,6 +67,7 @@ public class SignInVerify : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("Response: " + request.downloadHandler.text);
+            SceneManager.LoadScene("ar_scene");
         }
         else
         {
