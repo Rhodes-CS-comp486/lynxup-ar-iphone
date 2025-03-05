@@ -99,6 +99,9 @@ def login():
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
     query = dbuser.where(filter=FieldFilter("username", "==", f"{username}")).stream()
+    if not query:
+        return jsonify({"error": "Username already in use"}), 400   
+
     print(query)
     user = {}
     for doc in query:
@@ -114,5 +117,5 @@ def login():
     #     print("authentication failed")
 
     # TODO: do something if the authentication was a success....
-    return jsonify(user)
+    return jsonify(user), 200
 

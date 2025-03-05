@@ -11,7 +11,7 @@ public class SignInVerify : MonoBehaviour
     public TMP_InputField userName;
     //public TMP_InputField password;
     public Button submitButton;
-    private string apiUrl = "http://127.0.0.1:5000/add_user";
+    private string apiUrl = "http://127.0.0.1:5000/login";
 
     [System.Serializable]
 

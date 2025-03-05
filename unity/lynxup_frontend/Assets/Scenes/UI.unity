@@ -316,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 394181152}
-  - component: {fileID: 394181151}
+  - component: {fileID: 394181153}
   m_Layer: 0
   m_Name: Sign In Script
   m_TagString: Untagged
@@ -324,18 +324,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &394181151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394181150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eba30cc279274faf9caa77f5fe262ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &394181152
 Transform:
   m_ObjectHideFlags: 0
@@ -351,6 +339,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394181153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394181150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2537ed3b1884ce5a8355e562be2663a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 1781790972}
+  submitButton: {fileID: 1148943920}
 --- !u!1 &430127726
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 394181151}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: SwitchScene
         m_Mode: 5
@@ -1389,7 +1391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 394181151}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: SwitchScene
         m_Mode: 1
@@ -2740,7 +2742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73870edc25464be8bbfb370c39a89bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 1781790972}
   userName: {fileID: 0}
   location: {fileID: 0}
   fullName: {fileID: 0}
