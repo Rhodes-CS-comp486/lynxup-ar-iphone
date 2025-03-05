@@ -25,8 +25,8 @@ def add_user():
     # I think a (non-personal) location of origin would actually be really cool; let's add that!
     # Note: let's just get the username
     username = data.get("username")
-    # name = data.get("name")
-    # location = data.get("location")
+    fullname = data.get("fullname")
+    location = data.get("location")
     # email = data.get("email")
 
     # make sure the username that the user has chosen has not already been taken
@@ -41,6 +41,8 @@ def add_user():
 
     user = {
             "username" : username,
+            "location" : location,
+            "fullname" : fullname,
             "items" : [],
             "visited_locations" : []
             # "email" : email
@@ -49,6 +51,7 @@ def add_user():
     # maybe store this more securely
     # probably doesn't matter right now...
     # Update: we're authenticating with Google so we really don't need this
+    # Update to update: this looks to be a massive pain; let's leave it for now
     # password = data.get("password")
 
     entry_ref = user_ref.add(user)
