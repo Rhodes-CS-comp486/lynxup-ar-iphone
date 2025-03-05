@@ -2530,7 +2530,7 @@ GameObject:
   - component: {fileID: 1485574344}
   - component: {fileID: 1485574343}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2860,7 +2860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73870edc25464be8bbfb370c39a89bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 0}
+  userName: {fileID: 326860949}
+  location: {fileID: 1485574343}
+  fullName: {fileID: 55989126}
   submitButton: {fileID: 522002487}
 --- !u!4 &1944578687
 Transform:
