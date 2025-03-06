@@ -99,7 +99,8 @@ def login():
     # TODO: need to check whether the user exists
     dbuser = db_firestore.collection("users")
     query = dbuser.where(filter=FieldFilter("username", "==", f"{username}")).stream()
-    if not query:
+    new_list = list(query)
+    if not new_list:
         return jsonify({"error": "Username does not exist"}), 400   
 
     print(query)

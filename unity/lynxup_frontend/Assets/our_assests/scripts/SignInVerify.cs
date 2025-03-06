@@ -65,15 +65,23 @@ public class SignInVerify : MonoBehaviour
         yield return request.SendWebRequest();
 
         Debug.Log("HTTP Response Code: " + request.responseCode);
-        if (request.result == UnityWebRequest.Result.Success)
+        if (request.responseCode == 200)
         {
-            Debug.Log("Response: " + request.downloadHandler.text);
             SceneManager.LoadScene("ar_scene");
         }
         else
         {
-            Debug.LogError("Error: " + request.error);
+            Debug.LogError("Error: " + request.downloadHandler.text);
         }
+        // if (request.result == UnityWebRequest.Result.Success &&  request.responseCode == 200)
+        // {
+        //     Debug.Log("Response: " + request.downloadHandler.text);
+        //     SceneManager.LoadScene("ar_scene");
+        // }
+        // else
+        // {
+        //     Debug.LogError("Error: " + request.error);
+        // }
 
         //inputField.text = ""; // Optionally clear the input field after submission
         userName.text = "";

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public class InputSubmitter : MonoBehaviour
 {
@@ -67,13 +68,14 @@ public class InputSubmitter : MonoBehaviour
 
         yield return request.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.Success)
+        if (request.result == UnityWebRequest.Result.Success && request.responseCode == 200)
         {
             Debug.Log("Response: " + request.downloadHandler.text);
+            SceneManager.LoadScene("UI");
         }
         else
         {
-            Debug.LogError("Error: " + request.error);
+            Debug.LogError("Error: " + request.downloadHandler.text);
         }
 
         //inputField.text = ""; // Optionally clear the input field after submission
