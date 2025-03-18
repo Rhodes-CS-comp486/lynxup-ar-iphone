@@ -69,3 +69,9 @@ def login():
     # TODO: do something if the authentication was a success....
     return jsonify()
 
+@app.route("/modify_user/<user_id>", methods=['PUT'])
+def modify_user(user_id):
+    data = request.get_json()
+
+    print("hello")
+    return jsonify()
