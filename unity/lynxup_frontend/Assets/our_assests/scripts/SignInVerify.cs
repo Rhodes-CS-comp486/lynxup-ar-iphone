@@ -6,28 +6,25 @@ using System.Collections;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 
-public class InputSubmitter : MonoBehaviour
+public class SignInVerify : MonoBehaviour
 {
     //public TMP_InputField inputField;
     public TMP_InputField userName;
-    public TMP_InputField location;
-    public TMP_InputField fullName;
+    //public TMP_InputField password;
     public Button submitButton;
-    private string apiUrl = "http://127.0.0.1:5000/add_user";
+    private string apiUrl = "http://127.0.0.1:5000/login";
 
     [System.Serializable]
 
     class InputFields
     {
         public TMP_InputField userName;
-        public TMP_InputField fullName;
-        public TMP_InputField location;
+        //public TMP_InputField password;
     }
     class InputData
     {
         public string username;
-        public string fullname;
-        public string location;
+        //public string password;
     }
 
     void Start()
@@ -36,8 +33,6 @@ public class InputSubmitter : MonoBehaviour
         {
             InputFields fields = new InputFields();
             fields.userName = userName;
-            fields.fullName = fullName;
-            fields.location = location;
             submitButton.onClick.AddListener(() => StartCoroutine(SendInput(fields)));
         }
     }
@@ -55,8 +50,9 @@ public class InputSubmitter : MonoBehaviour
         InputData data = new InputData
         {
             username = inputFields.userName.text,
-            fullname = inputFields.fullName.text,
-            location = inputFields.location.text
+            //password = inputFields.password.text;
+            //fullname = inputFields.fullName.text,
+            //location = inputFields.location.text
         };
         string jsonData = JsonUtility.ToJson(data);
 
@@ -68,19 +64,28 @@ public class InputSubmitter : MonoBehaviour
 
         yield return request.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.Success && request.responseCode == 200)
+        Debug.Log("HTTP Response Code: " + request.responseCode);
+        if (request.responseCode == 200)
         {
-            Debug.Log("Response: " + request.downloadHandler.text);
-            SceneManager.LoadScene("UI");
+            SceneManager.LoadScene("ar_scene");
         }
         else
         {
             Debug.LogError("Error: " + request.downloadHandler.text);
         }
+        // if (request.result == UnityWebRequest.Result.Success &&  request.responseCode == 200)
+        // {
+        //     Debug.Log("Response: " + request.downloadHandler.text);
+        //     SceneManager.LoadScene("ar_scene");
+        // }
+        // else
+        // {
+        //     Debug.LogError("Error: " + request.error);
+        // }
 
         //inputField.text = ""; // Optionally clear the input field after submission
         userName.text = "";
-        fullName.text = "";
-        location.text = "";
+        //fullName.text = "";
+        //location.text = "";
     }
 }
