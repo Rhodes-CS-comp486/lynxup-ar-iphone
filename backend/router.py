@@ -120,9 +120,34 @@ def login():
     # TODO: do something if the authentication was a success....
     return jsonify(user), 200
 
+@app.route('/users/<user_id>/items', methods=['POST'])
+def add_item_to_user(user_id):
+    data = request.get_json()
+    item_name = data.get("name")
+    dbitems = db_firestore.collection("items")
+    query = dbitems.where(filter=FieldFilter("name", "==", f"{item_name}")).stream()
+    test_list = list(query)
+
+    if not test_list:
+        return jsonify({"error": "Username does not exist"}), 400
+
+    return jsonify()
+    
+
 @app.route("/modify_user/<user_id>", methods=['PUT'])
 def modify_user(user_id):
     data = request.get_json()
 
-    print("hello")
-    return jsonify()
+    dbusers = db_firestore.collection("users")
+    user = dbusers.document(user_id)
+
+    user.set(data)
+    return jsonify({"message", "User updated"}), 200
+
+@app.route("/users/<user_id>/items", methods=['GET'])
+def get_user_items(user_id):
+    dbusers = db_firestore.collection("users")
+    user = dbusers.document(user_id)
+    user_dict = user.to_dict()
+    items = user_dict.get('items', None)
+    return items
