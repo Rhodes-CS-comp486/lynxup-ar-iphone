@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import firebase_admin
 from firebase import db_firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
+from google.cloud import firestore
 
 app = Flask(__name__)
 
@@ -124,14 +125,28 @@ def login():
 def add_item_to_user(user_id):
     data = request.get_json()
     item_name = data.get("name")
+
+    if not item_name:
+        return jsonify({'error': 'Missing item name'}), 400
+
     dbitems = db_firestore.collection("items")
-    query = dbitems.where(filter=FieldFilter("name", "==", f"{item_name}")).stream()
-    test_list = list(query)
+    
+    # Retrieve the first item in the query
+    # (assume that no other items will have the same name)
+    item_query = dbitems.where(filter=FieldFilter("name", "==", f"{item_name}")).limit(1).stream()
+    item_doc = next(item_query, None)
 
-    if not test_list:
-        return jsonify({"error": "Username does not exist"}), 400
+    if not item_doc:
+        return jsonify({'error' : 'Item not found'}), 404
 
-    return jsonify()
+    item_ref = dbitems.document(item_doc.id)
+
+    user_ref = db_firestore.collection('users').document(user_id)
+    user_ref.update({
+        'items': firestore.ArrayUnion([item_ref])
+    })
+    
+    return jsonify({'message': f'Item "{item_name}" added to user'})
     
 
 @app.route("/modify_user/<user_id>", methods=['PUT'])
@@ -144,9 +159,28 @@ def modify_user(user_id):
     user.set(data)
     return jsonify({"message", "User updated"}), 200
 
+# TODO: make this retrieve the list of items from the items collection
+# (not just the references from the user)
 @app.route("/users/<user_id>/items", methods=['GET'])
 def get_user_items(user_id):
     dbusers = db_firestore.collection("users")
+    user_ref = dbusers.document(user_id)
+    user_doc = user_ref.get()
+
+    if not user_doc.exists:
+        return jsonify({'error': 'User not found'}), 404
+
+    user_data = user_doc.to_dict()
+    item_refs = user_data.get('items', [])
+    items_data = []
+
+    for ref in item_refs:
+        item_doc = ref.get()
+        if item_doc.exists:
+            item = item_doc.to_dict()
+            item['id'] = item_doc.id
+            items_data.append(item)
+
     user = dbusers.document(user_id)
     user_dict = user.to_dict()
     items = user_dict.get('items', None)
