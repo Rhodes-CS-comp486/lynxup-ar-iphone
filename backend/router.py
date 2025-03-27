@@ -101,14 +101,21 @@ def login():
     dbuser = db_firestore.collection("users")
     query = dbuser.where(filter=FieldFilter("username", "==", f"{username}")).stream()
     new_list = list(query)
+    print(new_list)
     if not new_list:
         return jsonify({"error": "Username does not exist"}), 400   
 
     print(query)
     user = {}
-    for doc in query:
+    user_info = {}
+    id = ""
+    for doc in new_list:
         print(f"ID : {doc.id}, Data: {doc.to_dict()}")
         user = doc.to_dict()
+        user_info["id"] = doc.id
+        user_info["username"] = user['username']
+        id = doc.id
+
 
     # dbpasswd = dbuser.get("password")
 
@@ -119,7 +126,8 @@ def login():
     #     print("authentication failed")
 
     # TODO: do something if the authentication was a success....
-    return jsonify(user), 200
+    # user["id"] = id
+    return jsonify(user_info), 200
 
 @app.route('/users/<user_id>/items', methods=['POST'])
 def add_item_to_user(user_id):
@@ -138,9 +146,7 @@ def add_item_to_user(user_id):
 
     if not item_doc:
         return jsonify({'error' : 'Item not found'}), 404
-
     item_ref = dbitems.document(item_doc.id)
-
     user_ref = db_firestore.collection('users').document(user_id)
     user_ref.update({
         'items': firestore.ArrayUnion([item_ref])

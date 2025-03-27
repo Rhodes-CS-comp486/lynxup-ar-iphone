@@ -15,6 +15,14 @@ public class SignInVerify : MonoBehaviour
     private string apiUrl = "http://127.0.0.1:5000/login";
 
     [System.Serializable]
+    public class ServerResponse
+    {
+        public string username;
+        public string id;
+        
+    }
+    
+    [System.Serializable]
 
     class InputFields
     {
@@ -65,8 +73,16 @@ public class SignInVerify : MonoBehaviour
         yield return request.SendWebRequest();
 
         Debug.Log("HTTP Response Code: " + request.responseCode);
+        string requestBody = request.downloadHandler.text;
+        
+        ServerResponse response = JsonUtility.FromJson<ServerResponse>(requestBody);
+        
         if (request.responseCode == 200)
         {
+            UserSession.Username = response.username;
+            UserSession.UserId = response.id;
+            Debug.Log("Username: " + UserSession.Username);
+            Debug.Log("UserId: " + UserSession.UserId);
             SceneManager.LoadScene("ar_scene");
         }
         else
@@ -84,6 +100,7 @@ public class SignInVerify : MonoBehaviour
         // }
 
         //inputField.text = ""; // Optionally clear the input field after submission
+        UserSession.UserId = "honk";
         userName.text = "";
         //fullName.text = "";
         //location.text = "";
