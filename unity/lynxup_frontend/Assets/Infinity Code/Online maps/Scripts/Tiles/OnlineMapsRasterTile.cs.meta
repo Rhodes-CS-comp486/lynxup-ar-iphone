@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e1523fee18e1348468a9e31920b85eff
+timeCreated: 1514890548
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/Tiles/OnlineMapsRasterTile.cs
+  uploadId: 706024

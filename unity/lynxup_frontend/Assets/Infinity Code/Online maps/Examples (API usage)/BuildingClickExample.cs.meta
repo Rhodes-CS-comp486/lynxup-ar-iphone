@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8041646dbe911ed4ebd2c6d927f6267e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Examples (API usage)/BuildingClickExample.cs
+  uploadId: 706024

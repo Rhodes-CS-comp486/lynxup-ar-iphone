@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9ebf71030c92b774b8038a3bc1098eac
+timeCreated: 18446744011573954816
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/WebServices/OnlineMapsGoogleElevation.cs
+  uploadId: 706024

@@ -28,6 +28,12 @@ MonoBehaviour:
     m_path: Assets/Scenes/BriggsUI.unity
   - m_enabled: 1
     m_path: Assets/Scenes/AccountCreationUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/RhodesMap.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/BuckmanHall.unity
+  - m_enabled: 0
+    m_path: Assets/Scenes/BurrowHall.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []

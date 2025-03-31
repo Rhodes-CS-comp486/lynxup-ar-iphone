@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8b93686cd62648d4cb48c427fec96caa
+timeCreated: 1514890548
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/Tiles/OnlineMapsVectorTile.cs
+  uploadId: 706024
