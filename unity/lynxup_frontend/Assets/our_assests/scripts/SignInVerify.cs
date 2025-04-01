@@ -100,7 +100,7 @@ public class SignInVerify : MonoBehaviour
         // }
 
         //inputField.text = ""; // Optionally clear the input field after submission
-        UserSession.UserId = "honk";
+        //UserSession.UserId = "honk";
         userName.text = "";
         //fullName.text = "";
         //location.text = "";
