@@ -5609,8 +5609,6 @@ MonoBehaviour:
   zoomSpeed: 0.01
   minZoom: 0.5
   maxZoom: 3
-  lastTouchPos: {x: 0, y: 0}
-  isPanning: 0
 --- !u!4 &1769851278
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 561beca46efb4d646af59783ceda5db4
+timeCreated: 1540218410
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Examples/Scenes/Behaviours/Car Drive
+    By Route.unity
+  uploadId: 706024

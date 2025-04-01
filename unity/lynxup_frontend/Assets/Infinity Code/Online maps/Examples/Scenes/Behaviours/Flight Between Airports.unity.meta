@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b896926779990c4986cb4909d2a5187
+timeCreated: 1559047106
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Examples/Scenes/Behaviours/Flight Between
+    Airports.unity
+  uploadId: 706024

@@ -1,3 +1,4 @@
+// ImageSceneSwitcher.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,8 @@ public class ImageSceneSwitcher : MonoBehaviour
     [System.Serializable]
     public class ImageScenePair
     {
-        public string imageName; // The name of the reference image (must match the XR Reference Image Library)
-        public string sceneName; // The name of the scene to load
+        public string imageName;
+        public string sceneName;
     }
 
     [Header("Assign Image-Scene Pairs in Inspector")]
@@ -43,16 +44,12 @@ public class ImageSceneSwitcher : MonoBehaviour
     {
         foreach (var updatedImage in eventArgs.updated)
         {
-            Debug.Log("Detected Image: " + updatedImage.referenceImage.name);
-
-            // Check if the image name is in the list
             foreach (var pair in imageScenePairs)
             {
                 if (updatedImage.referenceImage.name == pair.imageName)
                 {
-                    Debug.Log("Switching to scene: " + pair.sceneName);
                     StartCoroutine(SwitchSceneWithDelay(pair.sceneName));
-                    return; // Stop further execution after scene change
+                    return;
                 }
             }
         }
@@ -60,18 +57,25 @@ public class ImageSceneSwitcher : MonoBehaviour
 
     IEnumerator SwitchSceneWithDelay(string sceneName)
     {
-        // Temporarily disable AR tracking to avoid instant retriggering
         if (trackedImageManager != null)
         {
             trackedImageManager.enabled = false;
         }
 
-        yield return new WaitForSeconds(1f); // Small delay to avoid image re-detection
+        yield return new WaitForSeconds(1f);
+
+        if (sceneName == "BriggsUI" && PlayerPrefs.GetInt("HasOpenedBriggsUI", 0) == 1)
+        {
+            yield break;
+        }
+        if (sceneName == "BuckmanHall" && PlayerPrefs.GetInt("HasOpenedBuckmanHall", 0) == 1)
+        {
+            yield break;
+        }
 
         SceneManager.LoadScene(sceneName);
     }
 
-    // Call this method when returning to the AR scene
     public void ReactivateARTracking()
     {
         if (trackedImageManager != null)
@@ -82,7 +86,7 @@ public class ImageSceneSwitcher : MonoBehaviour
 
     IEnumerator EnableARTracking()
     {
-        yield return new WaitForSeconds(1f); // Wait before re-enabling tracking
+        yield return new WaitForSeconds(1f);
         trackedImageManager.enabled = true;
     }
 }

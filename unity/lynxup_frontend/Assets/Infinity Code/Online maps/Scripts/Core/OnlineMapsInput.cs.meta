@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 69b107f7fac6a9541b1394e8431d1d91
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/Core/OnlineMapsInput.cs
+  uploadId: 706024

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c669fb62e6ec8854fa2c0723e9946a25
+timeCreated: 1584712840
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/Editor/Elevations/OnlineMapsBingMapsTiledElevationManagerEditor.cs
+  uploadId: 706024
