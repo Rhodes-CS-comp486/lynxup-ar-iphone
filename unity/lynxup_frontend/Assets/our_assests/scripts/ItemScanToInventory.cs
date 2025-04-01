@@ -77,7 +77,7 @@ public class ItemScanToInventory : MonoBehaviour
     IEnumerator AddItemToInventory(string imageName)
     {
         string userId = UserSession.UserId;
-        string backendUrl = "http://127.0.0.1:5000/";
+        string backendUrl = "http://127.0.0.1:5000/add_items";
         // Note: need to find some way to get the userId
         ScanData data = new ScanData { userId = userId, itemId = imageName };
         string jsonData = JsonUtility.ToJson(data);

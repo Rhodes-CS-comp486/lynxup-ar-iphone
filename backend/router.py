@@ -129,10 +129,12 @@ def login():
     # user["id"] = id
     return jsonify(user_info), 200
 
-@app.route('/users/<user_id>/items', methods=['POST'])
-def add_item_to_user(user_id):
+@app.route('/add_items', methods=['POST'])
+def add_item_to_user():
     data = request.get_json()
-    item_name = data.get("name")
+    item_name = data.get("itemId")
+    user_id = data.get("userId")
+    
 
     if not item_name:
         return jsonify({'error': 'Missing item name'}), 400
@@ -146,13 +148,21 @@ def add_item_to_user(user_id):
 
     if not item_doc:
         return jsonify({'error' : 'Item not found'}), 404
+
     item_ref = dbitems.document(item_doc.id)
     user_ref = db_firestore.collection('users').document(user_id)
+    user = user_ref.get()
+
+    if not user.exists:
+        return jsonify({'error': f'User with id {user_id} does not exist'}), 404
+
+    name = user.get("username");
+    
     user_ref.update({
         'items': firestore.ArrayUnion([item_ref])
     })
     
-    return jsonify({'message': f'Item "{item_name}" added to user'})
+    return jsonify({'message': f'Item "{item_name}" added to user {name}'})
     
 
 @app.route("/modify_user/<user_id>", methods=['PUT'])

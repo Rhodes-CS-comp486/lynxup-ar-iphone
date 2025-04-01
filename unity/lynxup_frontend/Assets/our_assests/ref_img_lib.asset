@@ -49,3 +49,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: BriggsHall
     m_Texture: {fileID: 2800000, guid: 553535e101c364ef6aca148ba5085d8f, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4849403483068879464
+      m_GuidHigh: 12621441162369209746
+    m_SerializedTextureGuid:
+      m_GuidLow: 8004007738555903888
+      m_GuidHigh: 16241659620775627368
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: green_potion
+    m_Texture: {fileID: 0}
