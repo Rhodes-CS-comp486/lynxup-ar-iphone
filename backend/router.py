@@ -197,7 +197,4 @@ def get_user_items(user_id):
             item['id'] = item_doc.id
             items_data.append(item)
 
-    user = dbusers.document(user_id)
-    user_dict = user.to_dict()
-    items = user_dict.get('items', None)
-    return items
+    return jsonify(items_data), 200

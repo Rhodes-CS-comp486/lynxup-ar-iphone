@@ -7,7 +7,13 @@ using UnityEngine.Networking;
 public class ARItemTrigger : MonoBehaviour
 {
     public string itemName;
+    private UIManager uiManager;
 
+    void Start()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("are we triggering anything here?");
@@ -16,10 +22,14 @@ public class ARItemTrigger : MonoBehaviour
             // Test to verify that items can be scanned properly using this method.
             // Update: this is finally working omg!
             Debug.Log($"Scanned {itemName}!");
+
+            if (uiManager != null)
+                uiManager.ShowPopup("You collected: " + itemName);
             
             // now we need to send to the backend an indication that 
             // we have successfully retrieved the item
-            
+
+            //gameObject.SetActive(false);
             Debug.Log($"Sending {itemName} to {UserSession.UserId}'s inventory");
             StartCoroutine(AddItemToInventory(itemName));
 
