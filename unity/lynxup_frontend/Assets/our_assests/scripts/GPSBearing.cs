@@ -71,11 +71,10 @@ public class GPSBearing : MonoBehaviour
             Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
             debugTxt.text
                 = "\nLocation: \nLat: " + Input.location.lastData.latitude
-                + " \nLon: " + Input.location.lastData.longitude
-                + " \nAlt: " + Input.location.lastData.altitude
-                + " \nH_Acc: " + Input.location.lastData.horizontalAccuracy
-                + " \nTime: " + Input.location.lastData.timestamp;
-
+                                        + " \nLon: " + Input.location.lastData.longitude
+                                        + " \nAlt: " + Input.location.lastData.altitude
+                                        + " \nH_Acc: " + Input.location.lastData.horizontalAccuracy
+                                        + " \nTime: " + Input.location.lastData.timestamp;
             gps_ok = true;
         }
 
