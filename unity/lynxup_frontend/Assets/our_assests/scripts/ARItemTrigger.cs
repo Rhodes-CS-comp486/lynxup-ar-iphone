@@ -25,7 +25,8 @@ public class ARItemTrigger : MonoBehaviour
 
             if (uiManager != null)
                 uiManager.ShowPopup("You collected: " + itemName);
-            
+
+            gameObject.SetActive(false);
             // now we need to send to the backend an indication that 
             // we have successfully retrieved the item
 
