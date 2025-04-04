@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: aa30b41fb65e3104b90e1560d2ed1ea6
+timeCreated: 18446744011573954816
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/WebServices/OnlineMapsGooglePlaceDetails.cs
+  uploadId: 706024

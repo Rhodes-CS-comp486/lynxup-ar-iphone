@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6bde89a6df25aa44081a5d3509c5109e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Examples (API usage)/RasterizeDrawingForOverlay.cs
+  uploadId: 706024

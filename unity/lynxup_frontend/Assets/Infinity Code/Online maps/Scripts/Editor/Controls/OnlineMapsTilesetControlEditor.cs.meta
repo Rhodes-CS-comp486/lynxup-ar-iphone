@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c1c20df152b168d4b9bc3e2e59ca3667
+timeCreated: 18446744011573954816
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Scripts/Editor/Controls/OnlineMapsTilesetControlEditor.cs
+  uploadId: 706024

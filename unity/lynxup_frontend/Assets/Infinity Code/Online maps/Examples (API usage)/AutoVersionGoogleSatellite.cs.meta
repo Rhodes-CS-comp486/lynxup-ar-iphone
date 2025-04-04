@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 339b7dfa1c9217d4d8e6a1115fe2b2f9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 138509
+  packageName: Online Maps v3
+  packageVersion: 3.9.5
+  assetPath: Assets/Infinity Code/Online maps/Examples (API usage)/AutoVersionGoogleSatellite.cs
+  uploadId: 706024
