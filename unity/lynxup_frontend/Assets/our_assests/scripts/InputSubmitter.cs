@@ -13,7 +13,8 @@ public class InputSubmitter : MonoBehaviour
     public TMP_InputField location;
     public TMP_InputField fullName;
     public Button submitButton;
-    private string apiUrl = "http://127.0.0.1:5000/add_user";
+    //private string apiUrl = "http://127.0.0.1:5000/add_user";
+    private string apiUrl = "http://10.20.45.223:5000/add_user";
 
     [System.Serializable]
 
