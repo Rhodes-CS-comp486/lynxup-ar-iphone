@@ -84,7 +84,7 @@ public class SignInVerify : MonoBehaviour
             UserSession.UserId = response.id;
             Debug.Log("Username: " + UserSession.Username);
             Debug.Log("UserId: " + UserSession.UserId);
-            SceneManager.LoadScene("ar_scene");
+            SceneManager.LoadScene("ar_scene2");
         }
         else
         {
