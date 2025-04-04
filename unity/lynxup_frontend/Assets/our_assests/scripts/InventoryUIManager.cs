@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ public class InventoryUIManager : MonoBehaviour
         foreach (string item in inventoryItems)
         {
             GameObject newItem = Instantiate(itemPrefab, contentArea);
-            newItem.GetComponentInChildren<Text>().text = item;
+            newItem.GetComponentInChildren<TMP_Text>().text = item;
         }
     }
 

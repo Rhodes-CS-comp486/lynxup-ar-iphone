@@ -26,14 +26,15 @@ public class ARItemTrigger : MonoBehaviour
             if (uiManager != null)
                 uiManager.ShowPopup("You collected: " + itemName);
 
-            gameObject.SetActive(false);
+            // gameObject.SetActive(true);
             // now we need to send to the backend an indication that 
             // we have successfully retrieved the item
 
             //gameObject.SetActive(false);
             Debug.Log($"Sending {itemName} to {UserSession.UserId}'s inventory");
             StartCoroutine(AddItemToInventory(itemName));
-
+            
+            gameObject.SetActive(false);
         }
     }
     

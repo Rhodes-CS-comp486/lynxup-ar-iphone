@@ -362,8 +362,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1453,7 +1453,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -44}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236436840
 MonoBehaviour:
@@ -2332,7 +2332,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1580318590}
   inventoryButton: {fileID: 824003937}
   contentArea: {fileID: 1302704762}
-  itemPrefab: {fileID: 5261103175494576995, guid: 4b0530ec189b256ceabd88d1612da214,
+  itemPrefab: {fileID: 4526169778190293323, guid: 4b0530ec189b256ceabd88d1612da214,
     type: 3}
 --- !u!4 &2070261258
 Transform:
