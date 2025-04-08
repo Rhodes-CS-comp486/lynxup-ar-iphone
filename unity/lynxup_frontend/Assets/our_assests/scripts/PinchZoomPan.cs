@@ -14,11 +14,19 @@ public class PinchZoomPan : MonoBehaviour
     private Vector2 lastTouchPos;
     private bool isPanning;
 
+    private RectTransform parentRect;
+
+    void Start()
+    {
+        if (target != null)
+            parentRect = target.parent as RectTransform;
+    }
+
     void Update()
     {
-        if (target == null)
+        if (target == null || parentRect == null)
         {
-            Debug.LogWarning("PinchZoomPan: No target assigned.");
+            Debug.LogWarning("PinchZoomPan: No target or parent assigned.");
             return;
         }
 
@@ -63,11 +71,30 @@ public class PinchZoomPan : MonoBehaviour
     {
         float newScale = Mathf.Clamp(target.localScale.x + increment, minZoom, maxZoom);
         target.localScale = new Vector3(newScale, newScale, 1f);
+        ClampToBounds();
     }
 
     void Pan(Vector2 delta)
     {
         target.anchoredPosition += delta;
+        ClampToBounds();
+    }
+
+    void ClampToBounds()
+    {
+        if (target == null || parentRect == null) return;
+
+        Vector2 scaledSize = Vector2.Scale(target.rect.size, target.localScale);
+        Vector2 parentSize = parentRect.rect.size;
+
+        float clampX = Mathf.Max(0, (scaledSize.x - parentSize.x) / 2);
+        float clampY = Mathf.Max(0, (scaledSize.y - parentSize.y) / 2);
+
+        Vector2 clampedPos = target.anchoredPosition;
+        clampedPos.x = Mathf.Clamp(clampedPos.x, -clampX, clampX);
+        clampedPos.y = Mathf.Clamp(clampedPos.y, -clampY, clampY);
+
+        target.anchoredPosition = clampedPos;
     }
 
     bool IsTouchOverUI()
