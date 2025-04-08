@@ -119,18 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &67354509 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4185278490753244690, guid: 48cb3fb68c91eb94999fd99957eb0cae,
-    type: 3}
-  m_PrefabInstance: {fileID: 331264285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6551df0f69eeb406aa2dc97b2b27413b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &331264285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -989,7 +977,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 67354509}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GPSDirectionArrow, Assembly-CSharp
         m_MethodName: SwitchToNextTarget
         m_Mode: 1
