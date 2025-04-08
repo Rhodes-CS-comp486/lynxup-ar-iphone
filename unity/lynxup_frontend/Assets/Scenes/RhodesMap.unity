@@ -2051,6 +2051,30 @@ MonoBehaviour:
   buckmanRef: {fileID: 1402258456}
   lockBurrowRef: {fileID: 1716251031}
   burrowRef: {fileID: 330544982}
+  lockSouthwesternRef: {fileID: 1296156449}
+  southwesternRef: {fileID: 308202613}
+  lockCloughRef: {fileID: 1040811094}
+  cloughRef: {fileID: 1415979303}
+  lockFJRef: {fileID: 297442938}
+  fJRef: {fileID: 246048914}
+  lockHassellRef: {fileID: 1950881417}
+  hassellRef: {fileID: 1556358048}
+  lockKennedyRef: {fileID: 7867982}
+  kennedyRef: {fileID: 2078547254}
+  lockMcCoyRef: {fileID: 103514304}
+  mcCoyRef: {fileID: 923971037}
+  lockOhlendorfRef: {fileID: 741712236}
+  ohlendorfRef: {fileID: 1468187143}
+  lockRobertsonRef: {fileID: 1848559226}
+  robertsonRef: {fileID: 1349807638}
+  lockRatRef: {fileID: 1309168448}
+  RatRef: {fileID: 1481959125}
+  lockRhodesTowerRef: {fileID: 419239485}
+  rhodesTowerRef: {fileID: 2054191959}
+  lockLibraryRef: {fileID: 1984041700}
+  libraryRef: {fileID: 1062437897}
+  lockBCLCRef: {fileID: 1142656486}
+  bCLCRef: {fileID: 736825316}
 --- !u!4 &776404093
 Transform:
   m_ObjectHideFlags: 0
@@ -4479,7 +4503,7 @@ GameObject:
   - component: {fileID: 1481959128}
   - component: {fileID: 1481959127}
   m_Layer: 5
-  m_Name: TheRat
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
