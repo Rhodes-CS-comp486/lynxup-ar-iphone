@@ -492,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 835ef1f5f660a4ce7a346ed1b16bcbd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47c475abce297054882dee4be4e1da29, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -596,13 +596,13 @@ MonoBehaviour:
       - m_Target: {fileID: 123738741}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: SwitchScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ar_scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &340618602
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6a0ed4db128cb4a72ba587d2a278e3f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4d44ac17dfe41ff89564ee37581314f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -38,22 +38,152 @@ MonoBehaviour:
     m_Name: tea
     m_Texture: {fileID: 2800000, guid: a6a2c13b82b72474ca5585a535d32664, type: 3}
   - m_SerializedGuid:
-      m_GuidLow: 5314228820940397027
-      m_GuidHigh: 10955763720847498659
+      m_GuidLow: 4647152992243455847
+      m_GuidHigh: 8282042394350022273
     m_SerializedTextureGuid:
-      m_GuidLow: 7273033861686441441
-      m_GuidHigh: 10330422627353807466
-    m_Size: {x: 0.5, y: 0.425853}
-    m_SpecifySize: 1
-    m_Name: BriggsHall
-    m_Texture: {fileID: 2800000, guid: 553535e101c364ef6aca148ba5085d8f, type: 3}
-  - m_SerializedGuid:
-      m_GuidLow: 5089413925894669885
-      m_GuidHigh: 9450670871750029484
-    m_SerializedTextureGuid:
-      m_GuidLow: 11855628602501455431
-      m_GuidHigh: 11954763766608822088
+      m_GuidLow: 1118834824042872441
+      m_GuidHigh: 10740086136576184793
     m_Size: {x: 0.5, y: 0.46730462}
     m_SpecifySize: 1
     m_Name: BuckmanPlaque
-    m_Texture: {fileID: 2800000, guid: 710f5e47a766a48748ff6d824edae7a5, type: 3}
+    m_Texture: {fileID: 2800000, guid: 39697e79e6580f86d991b81370730c95, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4893960953014332094
+      m_GuidHigh: 14359064889145399724
+    m_SerializedTextureGuid:
+      m_GuidLow: 3784149646884031951
+      m_GuidHigh: 4265115740575755403
+    m_Size: {x: 0.5, y: 0.425853}
+    m_SpecifySize: 1
+    m_Name: BriggsPlaque
+    m_Texture: {fileID: 2800000, guid: f7714dcf000d34848becf1222bbc303b, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5039092730834027482
+      m_GuidHigh: 17107212515199831687
+    m_SerializedTextureGuid:
+      m_GuidLow: 8803568164895025145
+      m_GuidHigh: 10063205418169218281
+    m_Size: {x: 0.5, y: 0.52373886}
+    m_SpecifySize: 1
+    m_Name: BCLCPlaque
+    m_Texture: {fileID: 2800000, guid: 488167f98e9a7a2ce934c3bb02b0a78b, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5687177541313388607
+      m_GuidHigh: 15107340138847075773
+    m_SerializedTextureGuid:
+      m_GuidLow: 8382951427745132340
+      m_GuidHigh: 16197918237350687434
+    m_Size: {x: 0.5, y: 0.47674417}
+    m_SpecifySize: 1
+    m_Name: CloughPlaque
+    m_Texture: {fileID: 2800000, guid: a41a2f3439e87456caf21b0ed190cae0, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5231301870502004842
+      m_GuidHigh: 3021980565583569564
+    m_SerializedTextureGuid:
+      m_GuidLow: 17357408516949050159
+      m_GuidHigh: 17460625060633120313
+    m_Size: {x: 0.5, y: 0.507728}
+    m_SpecifySize: 1
+    m_Name: BurrowPlaque
+    m_Texture: {fileID: 2800000, guid: 2a16832fe715f0e1390e5277fb9950f2, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4772818252958783301
+      m_GuidHigh: 16272711332322249908
+    m_SerializedTextureGuid:
+      m_GuidLow: 3756914645963424715
+      m_GuidHigh: 18022363537602897371
+    m_Size: {x: 0.5, y: 0.32316118}
+    m_SpecifySize: 1
+    m_Name: FJPlaque
+    m_Texture: {fileID: 2800000, guid: 2c1cc3cb3df73423dbe5c59f264c1cfa, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4675912330547378229
+      m_GuidHigh: 4766538291957022365
+    m_SerializedTextureGuid:
+      m_GuidLow: 14175407629264052963
+      m_GuidHigh: 14506318478351801035
+    m_Size: {x: 0.5, y: 0.48335856}
+    m_SpecifySize: 1
+    m_Name: HassellPlaque
+    m_Texture: {fileID: 2800000, guid: 60a562e32a22c4b9cb1ad85ccccb50c9, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4740465612194710826
+      m_GuidHigh: 10006474390892115390
+    m_SerializedTextureGuid:
+      m_GuidLow: 1480474016800411824
+      m_GuidHigh: 15045877799187367496
+    m_Size: {x: 0.5, y: 0.4863124}
+    m_SpecifySize: 1
+    m_Name: KennedyPlaque
+    m_Texture: {fileID: 2800000, guid: 3e9590b0b346148b48c67f5224b2cdd0, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4804657816883563570
+      m_GuidHigh: 9474731327931448214
+    m_SerializedTextureGuid:
+      m_GuidLow: 2636015234946426762
+      m_GuidHigh: 14597665751093304331
+    m_Size: {x: 0.5, y: 0.49509}
+    m_SpecifySize: 1
+    m_Name: LibraryPlaque
+    m_Texture: {fileID: 2800000, guid: d57fe78a01e324950b5ccdaba85395ca, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4803900777495864735
+      m_GuidHigh: 4023066031201912968
+    m_SerializedTextureGuid:
+      m_GuidLow: 12140181169267555005
+      m_GuidHigh: 11188900244865510392
+    m_Size: {x: 0.5, y: 0.4869565}
+    m_SpecifySize: 1
+    m_Name: McCoyPlaque
+    m_Texture: {fileID: 2800000, guid: b7143abd9673a87af86b7dca7df5469b, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4912136383614842228
+      m_GuidHigh: 11199672448401264804
+    m_SerializedTextureGuid:
+      m_GuidLow: 17652860692651143200
+      m_GuidHigh: 12220006978436632475
+    m_Size: {x: 0.5, y: 0.38830584}
+    m_SpecifySize: 1
+    m_Name: OhlendorfPlaque
+    m_Texture: {fileID: 2800000, guid: 66ed70208f45f4fb9b8f823e9a2f96a9, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5415875234078245716
+      m_GuidHigh: 8033789110223415727
+    m_SerializedTextureGuid:
+      m_GuidLow: 14667186656894359153
+      m_GuidHigh: 9634694724996035947
+    m_Size: {x: 0.5, y: 0.5181818}
+    m_SpecifySize: 1
+    m_Name: RatPlaque
+    m_Texture: {fileID: 2800000, guid: ea899671508dcb8c6bf5b73ace4fb585, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5602393835228543489
+      m_GuidHigh: 7783864435850521774
+    m_SerializedTextureGuid:
+      m_GuidLow: 6055434614076454267
+      m_GuidHigh: 10917416822706845593
+    m_Size: {x: 0.5, y: 0.46898395}
+    m_SpecifySize: 1
+    m_Name: RhodesTowerPlaque
+    m_Texture: {fileID: 2800000, guid: cca1b57b39b2540999b750dec1748297, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5753300020729907990
+      m_GuidHigh: 5089067565456294810
+    m_SerializedTextureGuid:
+      m_GuidLow: 7253521065433352717
+      m_GuidHigh: 6346203131179858075
+    m_Size: {x: 0.5, y: 0.40502355}
+    m_SpecifySize: 1
+    m_Name: RobertsonPlaque
+    m_Texture: {fileID: 2800000, guid: 6bf7ca0daefa64a99b7872ca1f3e1258, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5430968742947557866
+      m_GuidHigh: 4680490250313462708
+    m_SerializedTextureGuid:
+      m_GuidLow: 2618362966882077034
+      m_GuidHigh: 3836798323459844793
+    m_Size: {x: 0.5, y: 0.33307332}
+    m_SpecifySize: 1
+    m_Name: SouthwesternPlaque
+    m_Texture: {fileID: 2800000, guid: e60b496a4b3e2456b96aa338bf0b3f35, type: 3}

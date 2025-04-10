@@ -40,7 +40,7 @@ public class RhodesMapSelectionRestorer : MonoBehaviour
             lockBriggsRef.SetActive(PlayerPrefs.GetInt("LockBriggsSelected", 1) == 1);
         if (briggsRef != null)
             briggsRef.SetActive(PlayerPrefs.GetInt("BriggsSelected", 0) == 1);
-
+        
         if (lockBuckmanRef != null)
             lockBuckmanRef.SetActive(PlayerPrefs.GetInt("LockBuckmanSelected", 1) == 1);
         if (buckmanRef != null)

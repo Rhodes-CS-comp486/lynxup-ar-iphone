@@ -805,7 +805,8 @@ Transform:
   m_LocalPosition: {x: 109.5, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1173307210}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656285550
@@ -2058,12 +2059,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173307208}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1130.0432, y: 4423.7437, z: 2481.5298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1020.5432, y: 4393.7437, z: 2481.5298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 614310802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1201619220
 PrefabInstance:
@@ -2219,7 +2220,7 @@ MonoBehaviour:
       m_Calls: []
   m_SerializedLibrary: {fileID: 11400000, guid: 4e048a75848db42799e0794c0286bf66,
     type: 2}
-  m_MaxNumberOfMovingImages: 4
+  m_MaxNumberOfMovingImages: 14
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &1245040714
 MonoBehaviour:
@@ -2249,10 +2250,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageScenePairs:
-  - imageName: BriggsHall
+  - imageName: BriggsPlaque
     sceneName: BriggsUI
   - imageName: BuckmanPlaque
-    sceneName: BuckmanHall
+    sceneName: BuckmanHallUI
+  - imageName: BCLCPlaque
+    sceneName: BCLCUI
+  - imageName: CloughPlaque
+    sceneName: CloughUI
+  - imageName: FJPlaque
+    sceneName: FJUI
+  - imageName: HassellPlaque
+    sceneName: HassellUI
+  - imageName: KennedyPlaque
+    sceneName: KennedyUI
+  - imageName: LibraryPlaque
+    sceneName: LibraryUI
+  - imageName: McCoyPlaque
+    sceneName: McCoyUI
+  - imageName: OhlendorfPlaque
+    sceneName: OhlendorfUI
+  - imageName: RatPlaque
+    sceneName: TheRatUI
+  - imageName: RhodesTowerPlaque
+    sceneName: RhodesTowerUI
+  - imageName: RobertsonPlaque
+    sceneName: RobertsonUI
+  - imageName: SouthwesternPlaque
+    sceneName: SouthWesterenUI
 --- !u!1 &1365422320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3867,7 +3892,6 @@ SceneRoots:
   - {fileID: 1499362997}
   - {fileID: 614310802}
   - {fileID: 750389086}
-  - {fileID: 1173307210}
   - {fileID: 1563612314}
   - {fileID: 1422715875}
   - {fileID: 1668697011}

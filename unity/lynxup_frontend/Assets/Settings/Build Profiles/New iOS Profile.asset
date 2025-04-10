@@ -29,11 +29,35 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/RhodesMap.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/BuckmanHall.unity
-  - m_enabled: 0
-    m_path: Assets/Scenes/BurrowHall.unity
-  - m_enabled: 0
-    m_path: Assets/Scenes/BCLC.unity
+    m_path: Assets/Scenes/BuckmanHallUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/BriggsUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/CloughUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/McCoyUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/OhlendorfUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TheRatUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/SouthWesterenUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/RobertsonUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/LibraryUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/RhodesTowerUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/FJUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/KennedyUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/HassellUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/BurrowHallUI.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/BCLCUI.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
