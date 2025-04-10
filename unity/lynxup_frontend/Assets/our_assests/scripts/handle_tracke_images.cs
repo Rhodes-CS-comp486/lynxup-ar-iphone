@@ -36,7 +36,7 @@ public class handle_tracke_images : MonoBehaviour
         foreach (var updatedImage in eventArgs.updated)
         {
             // Handle updated event
-            Debug.Log("Image name is " + updatedImage.referenceImage.name);
+            //Debug.Log("Image name is " + updatedImage.referenceImage.name);
             foreach (var arPrefab in ArPrefabs)
             {
                 if(updatedImage.referenceImage.name == arPrefab.name)

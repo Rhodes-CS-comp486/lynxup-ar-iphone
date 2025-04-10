@@ -24,7 +24,7 @@ public class TheRatSceneManager : MonoBehaviour
 
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         GameObject lockObj = allObjects.FirstOrDefault(go => go.name == "LockTheRat" && go.scene == rhodesMap);
-        GameObject obj = allObjects.FirstOrDefault(go => go.name == "TheRat" && go.scene == rhodesMap);
+        GameObject obj = allObjects.FirstOrDefault(go => go.name == "Rat" && go.scene == rhodesMap);
 
         if (lockObj != null) lockObj.SetActive(false);
         if (obj != null) obj.SetActive(true);
