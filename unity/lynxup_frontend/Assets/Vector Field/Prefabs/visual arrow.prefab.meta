@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9449634827fa9734d866a349e94492a7
+labels:
+- VisualArrow
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Prefabs/visual arrow.prefab
+  uploadId: 635470

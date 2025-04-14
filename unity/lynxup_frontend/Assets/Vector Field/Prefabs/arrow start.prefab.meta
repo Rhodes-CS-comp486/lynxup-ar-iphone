@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f36bb1297cda88641881aecdf254602b
+labels:
+- ArrowStart
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Prefabs/arrow start.prefab
+  uploadId: 635470

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a20e45c4fd82c92489510e8be20b0d26
+labels:
+- ArrowMid
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Prefabs/arrow mid.prefab
+  uploadId: 635470

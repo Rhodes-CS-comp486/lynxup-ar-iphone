@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 14fbb250669f3f1428e6b6760dcb032f
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Shaders/visualArrows.shader
+  uploadId: 635470

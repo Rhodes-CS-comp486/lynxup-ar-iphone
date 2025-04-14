@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 049fe86d41f9dfb4e8426a4232210b24
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Prefabs/bounding box edge.prefab
+  uploadId: 635470

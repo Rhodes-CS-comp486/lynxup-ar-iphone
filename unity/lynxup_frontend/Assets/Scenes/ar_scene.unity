@@ -4711,6 +4711,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: N_Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 1140486605221199527, guid: e01e81764416c48a09831d7135946c84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1957655881719848702, guid: e01e81764416c48a09831d7135946c84,
         type: 3}
       propertyPath: m_LocalScale.x
