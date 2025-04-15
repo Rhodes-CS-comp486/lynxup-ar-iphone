@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class LocationTrigger : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class LocationTrigger : MonoBehaviour
     private double originLat;
     private double originLon;
 
+    Locations.
     [System.Serializable]
     public class ARItem
     {
@@ -102,4 +104,23 @@ public class LocationTrigger : MonoBehaviour
 
         return new Vector3(xOffset, 0, zOffset);
     }
+    
+    public static Vector2 GenerateRandomCoordinateNear(double lat, double lon, float radiusMeters)
+    {
+        float radiusInDegrees = radiusMeters / 111000f;
+
+        float u = UnityEngine.Random.value;
+        float v = UnityEngine.Random.value;
+        float w = radiusInDegrees * Mathf.Sqrt(u);
+        float t = 2 * Mathf.PI * v;
+        float deltaLat = w * Mathf.Cos(t);
+        float deltaLon = w * Mathf.Sin(t) / Mathf.Cos(Mathf.Deg2Rad * (float)lat);
+
+        double newLat = lat + deltaLat;
+        double newLon = lon + deltaLon;
+
+        return new Vector2((float)newLat, (float)newLon);
+    }
+
+    
 }
