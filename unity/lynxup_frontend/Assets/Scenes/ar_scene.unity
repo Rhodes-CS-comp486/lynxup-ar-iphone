@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b80d6778154891b9559c6ca4991bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefabs: []
   triggerRadius: 5
   arItems:
   - prefab: {fileID: 0}

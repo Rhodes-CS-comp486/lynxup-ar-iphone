@@ -3,8 +3,11 @@ import firebase_admin
 from firebase import db_firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 from google.cloud import firestore
+import json
+import math, random
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -198,3 +201,64 @@ def get_user_items(user_id):
             items_data.append(item)
 
     return jsonify(items_data), 200
+
+@app.route("/push_locations", methods=['POST'])
+def push_locations():
+    batch = db_firestore.batch()
+    data = request.get_json()
+    locations_dict = data['locations']
+    print(locations_dict)
+    locations_ref = db_firestore.collection("locations")
+
+    print("hello")
+    for loc in locations_dict:
+        # loc = locations_dict[0]
+        new_ref = locations_ref.document()
+        print("honk")
+        batch.set(new_ref, {
+                "name": loc['name'],
+                "latitude": loc['latitude'],
+                "longitude": loc['longitude'],
+                "items": loc['items']
+            })
+        batch.commit()
+
+    # return jsonify({"test"})
+    return jsonify({"status": "success", "uploaded": len(locations_dict)});
+
+
+def offset_coordinates(lat, lon, radius_m):
+    # Random offset in meters within a circle
+    angle = random.uniform(0, 2 * math.pi)
+    r = radius_m * math.sqrt(random.uniform(0, 1))
+    delta_lat = r / 111320  # ~meters per degree latitude
+    delta_lon = r / (40075000 * math.cos(math.radians(lat)) / 360)
+    return lat + delta_lat * math.cos(angle), lon + delta_lon * math.sin(angle)
+
+@app.route("/generate_items", methods=["POST"])
+def generate_items():
+    locdb = db_firestore.collection("locations")
+    locations = locdb.stream()
+    itemsdb = db_firestore.collection("items")
+    items = itemsdb.stream()
+    item_names = []
+    for item in items:
+        item_names.append(item["name"])
+
+    for location in locations:
+        for _ in range(3):  # Number of items per location
+            loc_dict = location.to_dict()
+            lat, lon = offset_coordinates(loc_dict["latitude"], loc_dict["longitude"], 10)
+            item = {
+                "name": random.choice(item_names),
+                "lat": lat,
+                "lon": lon,
+            }
+            location.update({
+                    "items": firestore.ArrayUnion(item)
+                })
+            db_firestore.collection("item_placements").add(item)
+
+    return jsonify({"status": "success"})
+
+

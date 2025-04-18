@@ -8,13 +8,15 @@ public class LocationTrigger : MonoBehaviour
     // public GameObject arItemPrefab; // The item to place
     // public double targetLatitude;
     // public double targetLongitude;
+    public List<GameObject> itemPrefabs;
     public float triggerRadius = 5f; // meters
 
     private bool itemPlaced = false;
     private double originLat;
     private double originLon;
 
-    Locations.
+    // include all possible locations where items can spawn
+    private List<Locations.TargetLocation> locations = Locations.targets;
     [System.Serializable]
     public class ARItem
     {

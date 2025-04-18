@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public static class Locations
 {
@@ -9,15 +11,28 @@ public static class Locations
         public string name;
         public float latitude;
         public float longitude;
+        public List<string> items;
 
         public TargetLocation(string name, float latitude, float longitude)
         {
             this.name = name;
             this.latitude = latitude;
             this.longitude = longitude;
+            this.items = new List<string>();
         }
     }
-    
+
+    [System.Serializable]
+    public class LocationListWrapper
+    {
+        public List<TargetLocation> locations;
+
+        public LocationListWrapper(List<TargetLocation> locations)
+        {
+            this.locations = locations;
+        }
+    }
+
     [Header("List of Targets")]
     public static List<TargetLocation> targets = new List<TargetLocation>
     {
@@ -37,4 +52,43 @@ public static class Locations
         new TargetLocation("Rhodes Tower", 35.15442f, -89.98885f),
         new TargetLocation("Robertson", 35.15516f, -89.98857f),
     };
+
+    public static string SendLocationsToFlask()
+    {
+        List<TargetLocation> locations = new List<TargetLocation>();
+        foreach (TargetLocation location in targets)
+        {
+            locations.Add(new TargetLocation(location.name, location.latitude, location.longitude));
+        }
+        
+        LocationListWrapper wrapper = new LocationListWrapper(locations);
+        string json = JsonUtility.ToJson(wrapper);
+        Debug.Log(json);
+        return json;
+    }
+
+    public static IEnumerator UploadLocations(List<TargetLocation> locationList)
+    {
+        LocationListWrapper wrapper = new LocationListWrapper(locationList);
+        string json = JsonUtility.ToJson(wrapper);
+
+        using (UnityWebRequest request = new UnityWebRequest("http://your-server-url/upload_locations", "POST"))
+        {
+            byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+            request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Upload complete! Response: " + request.downloadHandler.text);
+            }
+            else
+            {
+                Debug.LogError("Upload failed: " + request.error);
+            }
+        }
+    }
 }
