@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import firebase_admin
 from firebase import db_firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
+from google.cloud.firestore_v1 import Increment
 from google.cloud import firestore
 import json
 import math, random
@@ -132,41 +133,41 @@ def login():
     # user["id"] = id
     return jsonify(user_info), 200
 
-@app.route('/add_items', methods=['POST'])
-def add_item_to_user():
-    data = request.get_json()
-    item_name = data.get("itemId")
-    user_id = data.get("userId")
-    
-
-    if not item_name:
-        return jsonify({'error': 'Missing item name'}), 400
-
-    dbitems = db_firestore.collection("items")
-    
-    # Retrieve the first item in the query
-    # (assume that no other items will have the same name)
-    item_query = dbitems.where(filter=FieldFilter("name", "==", f"{item_name}")).limit(1).stream()
-    item_doc = next(item_query, None)
-
-    if not item_doc:
-        return jsonify({'error' : 'Item not found'}), 404
-
-    item_ref = dbitems.document(item_doc.id)
-    user_ref = db_firestore.collection('users').document(user_id)
-    user = user_ref.get()
-
-    if not user.exists:
-        return jsonify({'error': f'User with id {user_id} does not exist'}), 404
-
-    name = user.get("username");
-    
-    user_ref.update({
-        'items': firestore.ArrayUnion([item_ref])
-    })
-    
-    return jsonify({'message': f'Item "{item_name}" added to user {name}'})
-    
+# @app.route('/add_items', methods=['POST'])
+# def add_item_to_user():
+#     data = request.get_json()
+#     item_name = data.get("itemId")
+#     user_id = data.get("userId")
+#
+#
+#     if not item_name:
+#         return jsonify({'error': 'Missing item name'}), 400
+#
+#     dbitems = db_firestore.collection("items")
+#
+#     # Retrieve the first item in the query
+#     # (assume that no other items will have the same name)
+#     item_query = dbitems.where(filter=FieldFilter("name", "==", f"{item_name}")).limit(1).stream()
+#     item_doc = next(item_query, None)
+#
+#     if not item_doc:
+#         return jsonify({'error' : 'Item not found'}), 404
+#
+#     item_ref = dbitems.document(item_doc.id)
+#     user_ref = db_firestore.collection('users').document(user_id)
+#     user = user_ref.get()
+#
+#     if not user.exists:
+#         return jsonify({'error': f'User with id {user_id} does not exist'}), 404
+#
+#     name = user.get("username");
+#
+#     user_ref.update({
+#         'items': firestore.ArrayUnion([item_ref])
+#     })
+#
+#     return jsonify({'message': f'Item "{item_name}" added to user {name}'})
+#
 
 @app.route("/modify_user/<user_id>", methods=['PUT'])
 def modify_user(user_id):
@@ -243,10 +244,12 @@ def generate_items():
     items = itemsdb.stream()
     item_names = []
     for item in items:
+        item = item.to_dict()
         item_names.append(item["name"])
 
     for location in locations:
         for _ in range(3):  # Number of items per location
+            loc_ref = locdb.document(location.id)
             loc_dict = location.to_dict()
             lat, lon = offset_coordinates(loc_dict["latitude"], loc_dict["longitude"], 10)
             item = {
@@ -254,11 +257,50 @@ def generate_items():
                 "lat": lat,
                 "lon": lon,
             }
-            location.update({
-                    "items": firestore.ArrayUnion(item)
+            loc_ref.update({
+                    "items": firestore.ArrayUnion([item])
                 })
-            db_firestore.collection("item_placements").add(item)
+            # db_firestore.collection("item_placements").add(item)
 
     return jsonify({"status": "success"})
+
+@app.route("/add_xp", methods=["POST"])
+def add_xp_to_user():
+    data = request.get_json()
+    print(data)
+    user_id = data["user_id"]
+    xp_add = data["xp"]
+    xp_add = int(xp_add)
+    user_doc = db_firestore.collection("users").document(user_id)
+    user_ref = user_doc.get()
+
+    if not user_ref.exists:
+        return jsonify({"error": "User does not exist"}), 400
+
+    user_doc.update({
+        "xp": Increment(15)
+        })
+
+    return jsonify({"success": f"Successfully incremented user xp by {xp_add}"}), 200 
+
+@app.route('/add_items', methods=['POST'])
+def add_items():
+    try:
+        items = request.get_json()
+
+        if not isinstance(items, list):
+            return jsonify({"error": "Expected a list of items"}), 400
+
+        batch = db_firestore.batch()
+
+        for item in items:
+            doc_ref = db_firestore.collection("items").document()  # Auto-generated ID
+            batch.set(doc_ref, item)
+
+        batch.commit()
+        return jsonify({"status": "success", "message": f"{len(items)} items added"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
