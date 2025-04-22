@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.Networking;
 
 public class LocationTrigger : MonoBehaviour
 {
@@ -52,8 +53,7 @@ public class LocationTrigger : MonoBehaviour
 
         originLat = Input.location.lastData.latitude;
         originLon = Input.location.lastData.longitude;
-
-        StartCoroutine(CheckProximity());
+        //StartCoroutine(CheckProximity());
     }
 
     IEnumerator CheckProximity()
@@ -122,6 +122,23 @@ public class LocationTrigger : MonoBehaviour
         double newLon = lon + deltaLon;
 
         return new Vector2((float)newLat, (float)newLon);
+    }
+    
+    
+    IEnumerator FetchLocations()
+    {
+        UnityWebRequest request = UnityWebRequest.Get("http://yourserver.com/locations");
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            var locationsJson = request.downloadHandler.text;
+            // Parse and store locations
+        }
+        else
+        {
+            Debug.LogError("Failed to fetch locations: " + request.error);
+        }
     }
 
     
