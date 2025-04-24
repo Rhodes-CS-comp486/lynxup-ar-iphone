@@ -27,6 +27,23 @@ public class LocationTrigger : MonoBehaviour
         public bool hasSpawned = false;
     }
 
+    [System.Serializable]
+    public class BackendItem
+    {
+        public double latitude;
+        public double longitude;
+        
+    }
+
+    [System.Serializable]
+    public class BackendLocation
+    {
+        public double latitude;
+        public double longitude;
+        public string name;
+        public List<BackendItem> items;
+    }
+
     public List<ARItem> arItems;
     IEnumerator Start()
     {
@@ -127,12 +144,13 @@ public class LocationTrigger : MonoBehaviour
     
     IEnumerator FetchLocations()
     {
-        UnityWebRequest request = UnityWebRequest.Get("http://yourserver.com/locations");
+        UnityWebRequest request = UnityWebRequest.Get(UserSession.BackendURL + "get_locations");
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
         {
             var locationsJson = request.downloadHandler.text;
+            
             // Parse and store locations
         }
         else

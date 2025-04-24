@@ -203,6 +203,19 @@ def get_user_items(user_id):
 
     return jsonify(items_data), 200
 
+@app.route("/get_locations", methods=['GET'])
+def get_locations():
+    locations_ref = db_firestore.collection("locations")
+    docs = locations_ref.stream()
+
+    results = []
+    for doc in docs:
+        data = doc.to_dict()
+        data['id'] = doc.id
+        results.append(data)
+
+    return jsonify(results), 200
+
 @app.route("/push_locations", methods=['POST'])
 def push_locations():
     batch = db_firestore.batch()
