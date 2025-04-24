@@ -146,12 +146,12 @@ public class LocationTrigger : MonoBehaviour
     {
         foreach (var item in location.items)
         {
-            if (ItemManager.prefabs.TryGetValue(item.name, out GameObject prefab))
-            {
-                // Spawn item near the player, random offset
-                Vector3 spawnPos = player.transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
-                Instantiate(prefab, spawnPos, Quaternion.identity);
-            }
+            // if (ItemManager.prefabs.TryGetValue(item.name, out GameObject prefab))
+            // {
+            //     // Spawn item near the player, random offset
+            //     Vector3 spawnPos = player.transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+            //     Instantiate(prefab, spawnPos, Quaternion.identity);
+            // }
         }
     }
     
