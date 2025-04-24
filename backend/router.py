@@ -208,11 +208,28 @@ def get_locations():
     locations_ref = db_firestore.collection("locations")
     docs = locations_ref.stream()
 
-    results = []
+    results = {
+            "locations": []
+            }
     for doc in docs:
         data = doc.to_dict()
         data['id'] = doc.id
-        results.append(data)
+        results["locations"].append(data)
+
+    return jsonify(results), 200
+
+@app.route("/get_items", methods=['GET'])
+def get_items():
+    items_ref = db_firestore.collection("items")
+    docs = items_ref.stream()
+
+    results = {
+            "items": []
+            }
+    for doc in docs:
+        data = doc.to_dict()
+        data['id'] = doc.id
+        results["items"].append(data)
 
     return jsonify(results), 200
 

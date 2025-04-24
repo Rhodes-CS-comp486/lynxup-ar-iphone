@@ -13,7 +13,7 @@ public class SignInVerify : MonoBehaviour
     //public TMP_InputField password;
     public Button submitButton;
     //private string apiUrl = "http://127.0.0.1:5000/login";
-    private string apiUrl = "http://10.20.45.223:5000/login";
+    private string apiUrl = UserSession.BackendURL + "login";
 
     [System.Serializable]
     public class ServerResponse
@@ -84,7 +84,7 @@ public class SignInVerify : MonoBehaviour
             UserSession.UserId = response.id;
             Debug.Log("Username: " + UserSession.Username);
             Debug.Log("UserId: " + UserSession.UserId);
-            SceneManager.LoadScene("ar_scene2");
+            SceneManager.LoadScene("ar_scene");
         }
         else
         {
