@@ -108,18 +108,18 @@ public class LocationTrigger : MonoBehaviour
         {
             Vector2 playerGPS = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
 
-            foreach (var location in Locations.targets)
+            foreach (var location in backendLocationsList.locations)
             {
                 string locationId = location.name;
                 if (triggeredLocations.Contains(locationId)) continue;
 
-                Vector2 targetGPS = new Vector2(location.latitude, location.longitude);
+                Vector2 targetGPS = new Vector2((float)location.latitude, (float)location.longitude);
                 float distance = DistanceInMeters(playerGPS, targetGPS);
 
                 if (distance <= triggerRadius)
                 {
                     Debug.Log($"Player reached {location.name}, spawning items!");
-                    //SpawnItemsAt(location);
+                    SpawnItemsAt(location);
                     triggeredLocations.Add(locationId);
                 }
             }
@@ -141,6 +141,20 @@ public class LocationTrigger : MonoBehaviour
         float c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
         return EarthRadius * c;
     }
+    
+    void SpawnItemsAt(BackendLocation location)
+    {
+        foreach (var item in location.items)
+        {
+            if (ItemManager.prefabs.TryGetValue(item.name, out GameObject prefab))
+            {
+                // Spawn item near the player, random offset
+                Vector3 spawnPos = player.transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+                Instantiate(prefab, spawnPos, Quaternion.identity);
+            }
+        }
+    }
+    
     IEnumerator CheckProximity()
     {
         while (true)
