@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using Unity.Tutorials.Core.Editor;
+//using Unity.Tutorials.Core.Editor;
 
 public class ARSceneSwitcher : MonoBehaviour
 {
