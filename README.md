@@ -107,11 +107,13 @@ cd lynxup-ar-iphone/
 ---
 
 ### 8. Run the Flask Server
-- Open the terminal and run the backend:  
+- Open the terminal and run the backend:
+```
   cd backend/  
   python3.9 -m venv .venv  
   source .venv/bin/activate  
   pip install -r requirements.txt  
   flask --app router.py run  
+```
 
 This installs firebase-tools and flask and runs the local server.
