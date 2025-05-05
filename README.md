@@ -24,3 +24,94 @@ Our architecture comprises four major parts: the frontend, backend, database, an
 - Python - language for backend
 - Flask - connecting backend to frontend using REST APIs
 - Unity XR - iOS AR framework for designing frontend
+
+
+## ✅ Prerequisites
+- macOS system  
+- Unity Hub + Unity Editor (with iOS Build Support)  
+- Xcode (latest version)  
+- Apple Developer Account (for physical device testing)  
+- AR-capable iOS device (iPhone 6s or later)  
+- Git installed on your machine  
+- Python 3.9 installed  
+- Flask (latest)  
+
+---
+
+## 🔧 Step-by-Step Guide
+
+### 1. Clone the GitHub Repository
+```
+git clone git@github.com:Rhodes-CS-comp486/lynxup-ar-iphone.git  
+cd lynxup-ar-iphone/
+```
+---
+
+### 2. Open the Project in Unity
+- Launch Unity Hub  
+- Click “Open” and select the cloned project folder  
+- Let Unity load dependencies and resolve packages  
+- If prompted, install the matching Unity Editor version (check ProjectSettings/ProjectVersion.txt)
+
+---
+
+### 3. Install Required Packages (if needed)
+- Open Window > Package Manager  
+- Ensure required AR packages are installed:  
+  - AR Foundation  
+  - ARKit XR Plugin  
+- Install XR Plugin Management:  
+  - Go to Edit > Project Settings > XR Plugin Management  
+  - Enable iOS and select ARKit
+
+---
+
+### 4. Set Up iOS Build Settings
+- Go to File > Build Settings  
+- Select iOS and click Switch Platform  
+- Open Player Settings:  
+  - Set your Company Name and Product Name  
+  - Set a valid Bundle Identifier (e.g., com.yourcompany.arapp)  
+  - Under Other Settings:  
+    - Scripting Backend: IL2CPP  
+    - Architecture: ARM64  
+    - Target minimum iOS version: Usually 13.0+  
+    - Enable Camera Usage Description  
+  - Enable ARKit under XR Plugin Management
+
+---
+
+### 5. Build Xcode Project
+- Back in Build Settings, click Build  
+- Choose a folder to export the Xcode project  
+- Unity generates an Xcode workspace/project
+
+---
+
+### 6. Open and Configure in Xcode
+- Open the generated .xcworkspace in Xcode  
+- Plug in your iOS device  
+- In the Signing & Capabilities tab:  
+  - Select your Apple Team  
+  - Ensure the Provisioning Profile and Bundle ID match  
+  - Enable Camera, Location and Motion permissions if not already set
+
+---
+
+### 7. Build and Run on iOS Device
+- Select your connected device as the target  
+- Click the Run (▶) button  
+- Trust the developer on your iPhone when prompted  
+- The AR app will launch and use the device camera and GPS
+
+---
+
+### 8. Run the Flask Server
+- Open the terminal and run the backend:  
+  cd backend/  
+  python3.9 -m venv .venv  
+  source .venv/bin/activate  
+  pip install -r requirements.txt  
+  flask --app router.py run  
+
+This installs firebase-tools and flask and runs the local server.
