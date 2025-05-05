@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6613471719022298050}
   - component: {fileID: 1109855199232063921}
   m_Layer: 0
-  m_Name: HandlePotion.012
+  m_Name: Purple Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

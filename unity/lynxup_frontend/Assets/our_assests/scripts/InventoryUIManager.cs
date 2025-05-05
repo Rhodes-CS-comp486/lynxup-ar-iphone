@@ -35,8 +35,11 @@ public class InventoryUIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Fetch inventory data from Firestore or local storage
-        inventoryItems = GetInventoryFromBackend(); 
+        if (inventoryItems.Count == 0)
+        {
+            // Fetch inventory data from Firestore or local storage
+            inventoryItems = GetInventoryFromBackend();
+        }
 
         // Display items
         foreach (string item in inventoryItems)
@@ -49,6 +52,19 @@ public class InventoryUIManager : MonoBehaviour
     // Simulated function to get inventory (Replace with Firestore fetch)
     List<string> GetInventoryFromBackend()
     {
-        return new List<string> { "Potion", "Magic Scroll", "Sword", "Shield" };
+        return new List<string> { };
+        //return new List<string> { "Potion", "Magic Scroll", "Sword", "Shield" };
+    }
+    // 🔥 New public method to add items from outside
+    public void AddItem(string itemName)
+    {
+        if (!inventoryItems.Contains(itemName)) // prevent duplicates
+        {
+            inventoryItems.Add(itemName);
+            if (inventoryPanel.activeSelf)
+            {
+                LoadInventory(); // refresh UI immediately if open
+            }
+        }
     }
 }

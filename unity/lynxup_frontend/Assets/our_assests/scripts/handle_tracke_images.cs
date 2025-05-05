@@ -8,10 +8,13 @@ public class handle_tracke_images : MonoBehaviour
     List<GameObject> ARObjects = new List<GameObject>();
     public GameObject[] ArPrefabs;
     
-    
+    private InventoryUIManager inventoryUIManager;
+
     void Awake()
     {
         trackedImageManager = GetComponent<ARTrackedImageManager>();
+        inventoryUIManager = FindObjectOfType<InventoryUIManager>(); // 🔥 Grab reference at start
+
     }
 
     void OnEnable()
@@ -43,6 +46,11 @@ public class handle_tracke_images : MonoBehaviour
                 {
                     var newPrefab = Instantiate(arPrefab, updatedImage.transform);
                     ARObjects.Add(newPrefab);
+                    if (inventoryUIManager != null)
+                    {
+                        inventoryUIManager.AddItem(arPrefab.name); // 🔥 Add Potion
+                    }
+
                 }
             }
             
