@@ -3,10 +3,10 @@ LynxUp is an application that gives prospective students a tour of Rhodes Colleg
 
 
 ## Features
- - [X] GPS Guidance
- - [X] Item Collection
- - [X] Choose your own Quest
- - [X] Unlock new places on the map
+ -  GPS Guidance
+ - Item Collection
+ - Choose your own Quest
+ - Unlock new places on the map
 
 
 ## System Diagram
