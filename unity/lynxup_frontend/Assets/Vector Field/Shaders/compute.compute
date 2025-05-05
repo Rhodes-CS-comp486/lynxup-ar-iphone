@@ -1,0 +1,105 @@
+﻿#pragma kernel khHiQTYQPlMbgONcCBVy
+#pragma kernel vadnsetxowsPEQMNVQMo
+#pragma kernel dwSlzbnVryNPMwPckIzp
+#pragma kernel DPnjJomejSOAKwuqxmHz
+#pragma kernel BdzTyCXHXKamoDVAcMvt
+
+struct eBpOlkAauBsFKmXImHLC {
+  int mode;
+  float innerRadProp;
+  float outerRadProp;
+  float forceProp;
+  float3 start, end;
+};
+RWStructuredBuffer<float3> YQrKFlBLknJwYAaiIvvJ;
+RWStructuredBuffer<float3> xmTdDnxUVSUdzezTxjIx;
+RWStructuredBuffer<float4> iOkOsKhndbndaVouXnJq;
+RWStructuredBuffer<eBpOlkAauBsFKmXImHLC> zXCgRXpRETCvLnmoHRwO;
+RWTexture3D<float4> bKsrtEGZDBxmPfxzhyae;
+float TMUoPLMSmEKTQMFZzHSz;
+float3 mpVhHgsKvLavBzZkGIlu;
+float3 dDpnwkGfhPswVmnhzcjO;
+float nljNaxHSEnBvvHcGBiWy;
+int zXCgRXpRETCvLnmoHRwONum;
+bool kVVWjDvpEiotSIemLLhA;
+int OMgzhJzqNnhAHsVuUPRg(int3 cmhgZTXbMfPNEhNVQkLH) {
+  int3 KfQcrXQwGRqVbDfTdKAv = dDpnwkGfhPswVmnhzcjO;
+  if (cmhgZTXbMfPNEhNVQkLH.x >= KfQcrXQwGRqVbDfTdKAv.x || cmhgZTXbMfPNEhNVQkLH.y >= KfQcrXQwGRqVbDfTdKAv.y || cmhgZTXbMfPNEhNVQkLH.z >= KfQcrXQwGRqVbDfTdKAv.z)
+    return -1;
+  int x = KfQcrXQwGRqVbDfTdKAv.x;
+  int y = KfQcrXQwGRqVbDfTdKAv.y;
+  int z = KfQcrXQwGRqVbDfTdKAv.z;
+  return cmhgZTXbMfPNEhNVQkLH.x + x * cmhgZTXbMfPNEhNVQkLH.y + x * y * cmhgZTXbMfPNEhNVQkLH.z;
+};
+float pVDSQsFuBisGgzPmgyCI(float3 OZQbbewJiMTKBHWbqKPz, float3 VIKpWNwlFjSYAqqwvTWn, float3 ReWyqFSjVQirpGuzsqBc, out float3 jhZkmvZCWQASvcfRXEKf) {
+  float YIBrhQWyzrMwbzpUXNiS = ReWyqFSjVQirpGuzsqBc.x - VIKpWNwlFjSYAqqwvTWn.x;
+  float gUjsEAvPUtagFfOAOuKO = ReWyqFSjVQirpGuzsqBc.y - VIKpWNwlFjSYAqqwvTWn.y;
+  float PziDZNTyBgMvMDrUiPbh = ReWyqFSjVQirpGuzsqBc.z - VIKpWNwlFjSYAqqwvTWn.z;
+  if (YIBrhQWyzrMwbzpUXNiS == 0.0 && gUjsEAvPUtagFfOAOuKO == 0.0 && PziDZNTyBgMvMDrUiPbh == 0.0) {
+    float ZLEquGhjeAoscjEJiRON = OZQbbewJiMTKBHWbqKPz.x - VIKpWNwlFjSYAqqwvTWn.x;
+    float RYSWiGLTSmlwZFzTHGQE = OZQbbewJiMTKBHWbqKPz.y - VIKpWNwlFjSYAqqwvTWn.y;
+    float lqfvOOLIVQdHWsWLeKQC = OZQbbewJiMTKBHWbqKPz.z - VIKpWNwlFjSYAqqwvTWn.z;
+    return sqrt(ZLEquGhjeAoscjEJiRON * ZLEquGhjeAoscjEJiRON + RYSWiGLTSmlwZFzTHGQE * RYSWiGLTSmlwZFzTHGQE + lqfvOOLIVQdHWsWLeKQC * lqfvOOLIVQdHWsWLeKQC);
+  }
+  float qVLhieOqklBRixxcICMn = ((OZQbbewJiMTKBHWbqKPz.x - VIKpWNwlFjSYAqqwvTWn.x) * YIBrhQWyzrMwbzpUXNiS + (OZQbbewJiMTKBHWbqKPz.y - VIKpWNwlFjSYAqqwvTWn.y) * gUjsEAvPUtagFfOAOuKO + (OZQbbewJiMTKBHWbqKPz.z - VIKpWNwlFjSYAqqwvTWn.z) * PziDZNTyBgMvMDrUiPbh) / (YIBrhQWyzrMwbzpUXNiS * YIBrhQWyzrMwbzpUXNiS + gUjsEAvPUtagFfOAOuKO * gUjsEAvPUtagFfOAOuKO + PziDZNTyBgMvMDrUiPbh * PziDZNTyBgMvMDrUiPbh);
+  float vvAhJeRWzCEHsULJBspy;
+  float dFjKyOgVMCmwPrDqdxOh;
+  float CACLgLwbHyioWnFkcqXJ;
+  if (qVLhieOqklBRixxcICMn < 0.0) {
+    vvAhJeRWzCEHsULJBspy = OZQbbewJiMTKBHWbqKPz.x - VIKpWNwlFjSYAqqwvTWn.x;
+    dFjKyOgVMCmwPrDqdxOh = OZQbbewJiMTKBHWbqKPz.y - VIKpWNwlFjSYAqqwvTWn.y;
+    CACLgLwbHyioWnFkcqXJ = OZQbbewJiMTKBHWbqKPz.z - VIKpWNwlFjSYAqqwvTWn.z;
+    jhZkmvZCWQASvcfRXEKf = VIKpWNwlFjSYAqqwvTWn;
+  } else if (qVLhieOqklBRixxcICMn > 1.0) {
+    vvAhJeRWzCEHsULJBspy = OZQbbewJiMTKBHWbqKPz.x - ReWyqFSjVQirpGuzsqBc.x;
+    dFjKyOgVMCmwPrDqdxOh = OZQbbewJiMTKBHWbqKPz.y - ReWyqFSjVQirpGuzsqBc.y;
+    CACLgLwbHyioWnFkcqXJ = OZQbbewJiMTKBHWbqKPz.z - ReWyqFSjVQirpGuzsqBc.z;
+    jhZkmvZCWQASvcfRXEKf = ReWyqFSjVQirpGuzsqBc;
+  } else {
+    float3 vec = float3(VIKpWNwlFjSYAqqwvTWn.x + qVLhieOqklBRixxcICMn * YIBrhQWyzrMwbzpUXNiS, VIKpWNwlFjSYAqqwvTWn.y + qVLhieOqklBRixxcICMn * gUjsEAvPUtagFfOAOuKO, VIKpWNwlFjSYAqqwvTWn.z + qVLhieOqklBRixxcICMn * PziDZNTyBgMvMDrUiPbh);
+    vvAhJeRWzCEHsULJBspy = OZQbbewJiMTKBHWbqKPz.x - vec.x;
+    dFjKyOgVMCmwPrDqdxOh = OZQbbewJiMTKBHWbqKPz.y - vec.y;
+    CACLgLwbHyioWnFkcqXJ = OZQbbewJiMTKBHWbqKPz.z - vec.z;
+    jhZkmvZCWQASvcfRXEKf = vec;
+  }
+  return sqrt(vvAhJeRWzCEHsULJBspy * vvAhJeRWzCEHsULJBspy + dFjKyOgVMCmwPrDqdxOh * dFjKyOgVMCmwPrDqdxOh + CACLgLwbHyioWnFkcqXJ * CACLgLwbHyioWnFkcqXJ);
+};
+float4 hHbdJfAeOkofDkxbffnp(float4 TEcCgyEsDSKFoBExhlOB, float3 gUdQFuFWzZkIKskzCdOr) {
+  for (int i = 0; i < zXCgRXpRETCvLnmoHRwONum; i++) {
+    float vLHVtkHZxuzivceDDqRU = 1;
+    eBpOlkAauBsFKmXImHLC faVSCoiRWZIqDkxpjkiL = zXCgRXpRETCvLnmoHRwO[i];
+    float3 tpjiWCRUpJcTdzSiZazu = 0;
+    bool qZbPxabgKgVNaKICUmmE = true;
+    float distanceToSegment = 0;
+    if (faVSCoiRWZIqDkxpjkiL.mode != 0) {
+      distanceToSegment = pVDSQsFuBisGgzPmgyCI(gUdQFuFWzZkIKskzCdOr, faVSCoiRWZIqDkxpjkiL.start, faVSCoiRWZIqDkxpjkiL.end, tpjiWCRUpJcTdzSiZazu);
+      if (distanceToSegment > faVSCoiRWZIqDkxpjkiL.innerRadProp) {
+        vLHVtkHZxuzivceDDqRU = saturate(1.0 - (distanceToSegment - faVSCoiRWZIqDkxpjkiL.innerRadProp) / (faVSCoiRWZIqDkxpjkiL.outerRadProp - faVSCoiRWZIqDkxpjkiL.innerRadProp));
+        qZbPxabgKgVNaKICUmmE = false;
+      }
+      if (faVSCoiRWZIqDkxpjkiL.mode == 2) {
+        TEcCgyEsDSKFoBExhlOB *= lerp(1, faVSCoiRWZIqDkxpjkiL.forceProp, vLHVtkHZxuzivceDDqRU);
+      }
+    }
+    if (faVSCoiRWZIqDkxpjkiL.mode != 2) {
+      float3 forward = faVSCoiRWZIqDkxpjkiL.mode == 3 ? normalize(tpjiWCRUpJcTdzSiZazu - gUdQFuFWzZkIKskzCdOr) : normalize(faVSCoiRWZIqDkxpjkiL.end - faVSCoiRWZIqDkxpjkiL.start);
+      if (!qZbPxabgKgVNaKICUmmE || faVSCoiRWZIqDkxpjkiL.mode != 3) {
+        if (faVSCoiRWZIqDkxpjkiL.mode == 4 && distanceToSegment < faVSCoiRWZIqDkxpjkiL.outerRadProp) {
+          vLHVtkHZxuzivceDDqRU = 1 - vLHVtkHZxuzivceDDqRU;
+        }
+        TEcCgyEsDSKFoBExhlOB += float4(forward * faVSCoiRWZIqDkxpjkiL.forceProp * vLHVtkHZxuzivceDDqRU, 1);
+      }
+    }
+  }
+  return TEcCgyEsDSKFoBExhlOB;
+};
+[numthreads(4, 4, 4)] void BdzTyCXHXKamoDVAcMvt(int3 cmhgZTXbMfPNEhNVQkLH
+                                                : SV_DispatchThreadID) {  if (cmhgZTXbMfPNEhNVQkLH.x >= mpVhHgsKvLavBzZkGIlu.x || cmhgZTXbMfPNEhNVQkLH.y >= mpVhHgsKvLavBzZkGIlu.y || cmhgZTXbMfPNEhNVQkLH.z >= mpVhHgsKvLavBzZkGIlu.z)    return;  int x = mpVhHgsKvLavBzZkGIlu.x;  int y = mpVhHgsKvLavBzZkGIlu.y;  int z = mpVhHgsKvLavBzZkGIlu.z;  int IRArobgaCaZqUlwdfYNx = cmhgZTXbMfPNEhNVQkLH.x + x * cmhgZTXbMfPNEhNVQkLH.y + x * y * cmhgZTXbMfPNEhNVQkLH.z;  float4 THIOqIThHpdRjUwMfYuX = iOkOsKhndbndaVouXnJq[IRArobgaCaZqUlwdfYNx];  iOkOsKhndbndaVouXnJq[IRArobgaCaZqUlwdfYNx] = THIOqIThHpdRjUwMfYuX * 2 - float4(1.0, 1.0, 1.0, 1.0); };
+[numthreads(4, 4, 4)] void khHiQTYQPlMbgONcCBVy(int3 cmhgZTXbMfPNEhNVQkLH
+                                                : SV_DispatchThreadID) {  int IRArobgaCaZqUlwdfYNx = OMgzhJzqNnhAHsVuUPRg(cmhgZTXbMfPNEhNVQkLH);  if (IRArobgaCaZqUlwdfYNx == -1)    return;  YQrKFlBLknJwYAaiIvvJ[IRArobgaCaZqUlwdfYNx] = float3(cmhgZTXbMfPNEhNVQkLH.x, cmhgZTXbMfPNEhNVQkLH.y, cmhgZTXbMfPNEhNVQkLH.z) * TMUoPLMSmEKTQMFZzHSz; };
+[numthreads(4, 4, 4)] void vadnsetxowsPEQMNVQMo(int3 cmhgZTXbMfPNEhNVQkLH
+                                                : SV_DispatchThreadID) {  int THIOqIThHpdRjUwMfYuX = OMgzhJzqNnhAHsVuUPRg(cmhgZTXbMfPNEhNVQkLH);  if (THIOqIThHpdRjUwMfYuX == -1)    return;  float3 idWithOffset = floor(cmhgZTXbMfPNEhNVQkLH * nljNaxHSEnBvvHcGBiWy);  float4 IRArobgaCaZqUlwdfYNx = iOkOsKhndbndaVouXnJq[idWithOffset.x + mpVhHgsKvLavBzZkGIlu.x * idWithOffset.y + mpVhHgsKvLavBzZkGIlu.x * mpVhHgsKvLavBzZkGIlu.y * idWithOffset.z];  float3 gUdQFuFWzZkIKskzCdOr = YQrKFlBLknJwYAaiIvvJ[THIOqIThHpdRjUwMfYuX];  IRArobgaCaZqUlwdfYNx = hHbdJfAeOkofDkxbffnp(IRArobgaCaZqUlwdfYNx, gUdQFuFWzZkIKskzCdOr);  xmTdDnxUVSUdzezTxjIx[THIOqIThHpdRjUwMfYuX] = IRArobgaCaZqUlwdfYNx.xyz;  if (!kVVWjDvpEiotSIemLLhA) {    xmTdDnxUVSUdzezTxjIx[THIOqIThHpdRjUwMfYuX] = clamp(xmTdDnxUVSUdzezTxjIx[THIOqIThHpdRjUwMfYuX], -1, 1);  } };
+[numthreads(4, 4, 4)] void dwSlzbnVryNPMwPckIzp(int3 cmhgZTXbMfPNEhNVQkLH
+                                                : SV_DispatchThreadID) {  if (cmhgZTXbMfPNEhNVQkLH.x >= mpVhHgsKvLavBzZkGIlu.x || cmhgZTXbMfPNEhNVQkLH.y >= mpVhHgsKvLavBzZkGIlu.y || cmhgZTXbMfPNEhNVQkLH.z >= mpVhHgsKvLavBzZkGIlu.z)    return;  int x = mpVhHgsKvLavBzZkGIlu.x;  int y = mpVhHgsKvLavBzZkGIlu.y;  int z = mpVhHgsKvLavBzZkGIlu.z;  int THIOqIThHpdRjUwMfYuX = cmhgZTXbMfPNEhNVQkLH.x + x * cmhgZTXbMfPNEhNVQkLH.y + x * y * cmhgZTXbMfPNEhNVQkLH.z;  float4 IRArobgaCaZqUlwdfYNx = iOkOsKhndbndaVouXnJq[THIOqIThHpdRjUwMfYuX];  float3 gUdQFuFWzZkIKskzCdOr = float3(cmhgZTXbMfPNEhNVQkLH.x, cmhgZTXbMfPNEhNVQkLH.y, cmhgZTXbMfPNEhNVQkLH.z) * TMUoPLMSmEKTQMFZzHSz / nljNaxHSEnBvvHcGBiWy;  IRArobgaCaZqUlwdfYNx = hHbdJfAeOkofDkxbffnp(IRArobgaCaZqUlwdfYNx, gUdQFuFWzZkIKskzCdOr);  if (!kVVWjDvpEiotSIemLLhA) {    iOkOsKhndbndaVouXnJq[THIOqIThHpdRjUwMfYuX] = saturate((IRArobgaCaZqUlwdfYNx + float4(1.0, 1.0, 1.0, 1.0)) / 2.0);  } else {    iOkOsKhndbndaVouXnJq[THIOqIThHpdRjUwMfYuX] = IRArobgaCaZqUlwdfYNx;  } };
+[numthreads(4, 4, 4)] void DPnjJomejSOAKwuqxmHz(int3 cmhgZTXbMfPNEhNVQkLH
+                                                : SV_DispatchThreadID) {  if (cmhgZTXbMfPNEhNVQkLH.x >= mpVhHgsKvLavBzZkGIlu.x || cmhgZTXbMfPNEhNVQkLH.y >= mpVhHgsKvLavBzZkGIlu.y || cmhgZTXbMfPNEhNVQkLH.z >= mpVhHgsKvLavBzZkGIlu.z)    return;  int x = mpVhHgsKvLavBzZkGIlu.x;  int y = mpVhHgsKvLavBzZkGIlu.y;  int z = mpVhHgsKvLavBzZkGIlu.z;  int THIOqIThHpdRjUwMfYuX = cmhgZTXbMfPNEhNVQkLH.x + x * cmhgZTXbMfPNEhNVQkLH.y + x * y * cmhgZTXbMfPNEhNVQkLH.z;  float4 IRArobgaCaZqUlwdfYNx = iOkOsKhndbndaVouXnJq[THIOqIThHpdRjUwMfYuX];  float3 gUdQFuFWzZkIKskzCdOr = float3(cmhgZTXbMfPNEhNVQkLH.x, cmhgZTXbMfPNEhNVQkLH.y, cmhgZTXbMfPNEhNVQkLH.z) * TMUoPLMSmEKTQMFZzHSz / nljNaxHSEnBvvHcGBiWy;  IRArobgaCaZqUlwdfYNx = hHbdJfAeOkofDkxbffnp(IRArobgaCaZqUlwdfYNx, gUdQFuFWzZkIKskzCdOr);  if (!kVVWjDvpEiotSIemLLhA) {    bKsrtEGZDBxmPfxzhyae[cmhgZTXbMfPNEhNVQkLH.xyz] = saturate((IRArobgaCaZqUlwdfYNx + float4(1.0, 1.0, 1.0, 1.0)) / 2.0);  } else {    bKsrtEGZDBxmPfxzhyae[cmhgZTXbMfPNEhNVQkLH.xyz] = IRArobgaCaZqUlwdfYNx;  } }

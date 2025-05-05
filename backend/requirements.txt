@@ -1,2 +1,4 @@
 Flask
 firebase-admin
+google-cloud-firestore
+routes

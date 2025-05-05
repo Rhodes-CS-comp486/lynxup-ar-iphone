@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 448829f61a28e884f9c98e0d5708c591
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 141215
+  packageName: Vector Field Maker Lite
+  packageVersion: 2.0
+  assetPath: Assets/Vector Field/Demo SceneSettings.lighting
+  uploadId: 635470

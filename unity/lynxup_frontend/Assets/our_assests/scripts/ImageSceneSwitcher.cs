@@ -48,30 +48,30 @@ public class ImageSceneSwitcher : MonoBehaviour
             {
                 if (updatedImage.referenceImage.name == pair.imageName)
                 {
-                    StartCoroutine(SwitchSceneWithDelay(pair.sceneName));
+                    StartCoroutine(SwitchSceneWithDelay(pair.imageName, pair.sceneName));
                     return;
                 }
             }
         }
     }
 
-    IEnumerator SwitchSceneWithDelay(string sceneName)
+    IEnumerator SwitchSceneWithDelay(string imageName, string sceneName)
     {
         if (trackedImageManager != null)
-        {
             trackedImageManager.enabled = false;
-        }
 
         yield return new WaitForSeconds(1f);
 
-        if (sceneName == "BriggsUI" && PlayerPrefs.GetInt("HasOpenedBriggsUI", 0) == 1)
+        string sceneKey = "HasOpened" + sceneName;
+
+        // Only allow switching scene if it's never been opened
+        if (PlayerPrefs.GetInt(sceneKey, 0) == 1)
         {
             yield break;
         }
-        if (sceneName == "BuckmanHall" && PlayerPrefs.GetInt("HasOpenedBuckmanHall", 0) == 1)
-        {
-            yield break;
-        }
+
+        PlayerPrefs.SetInt(sceneKey, 1);
+        PlayerPrefs.Save();
 
         SceneManager.LoadScene(sceneName);
     }
