@@ -26,7 +26,7 @@ Our architecture comprises four major parts: the frontend, backend, database, an
 - Unity XR - iOS AR framework for designing frontend
 
 
-## ✅ Prerequisites
+## Prerequisites
 - macOS system  
 - Unity Hub + Unity Editor (with iOS Build Support)  
 - Xcode (latest version)  
@@ -38,7 +38,7 @@ Our architecture comprises four major parts: the frontend, backend, database, an
 
 ---
 
-## 🔧 Step-by-Step Guide
+## Step-by-Step Guide
 
 ### 1. Clone the GitHub Repository
 ```
