@@ -24,6 +24,7 @@ Our architecture comprises four major parts: the frontend, backend, database, an
 - Python - language for backend
 - Flask - connecting backend to frontend using REST APIs
 - Unity XR - iOS AR framework for designing frontend
+- Unity Assets: Procedural potions, Pixel Art Padlock Pack, and 2D Atlas Speech bubbles
 
 
 ## Prerequisites
